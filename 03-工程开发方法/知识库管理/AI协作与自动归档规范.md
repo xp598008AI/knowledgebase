@@ -47,3 +47,9 @@ AI 不得将自己生成的内容描述为已通过工程验证。对标准条�
 - [ ] 图像或附件的相对链接（如有）
 - [ ] 更新索引
 - [ ] 验证链接、文件存在性和敏感信息
+
+## 图片资料
+
+![技术图片自动归档流水线示意图](images/technical-image-archive-workflow.svg)
+
+**图示说明：** 技术图片自动归档流水线示意图。来源：Repository workflow validation example。审核状态：Draft。请核对图中文字、单位、信号方向及适用标准版本。
