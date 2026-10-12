@@ -19,6 +19,7 @@
 - [技术知识卡片](../templates/KNOWLEDGE.md)
 - [测试报告](../templates/TEST_REPORT.md)
 - [失效分析](../templates/FAILURE_ANALYSIS.md)
+- 图片引用与本地链接自动检查：`scripts/check_image_refs.py`、`scripts/check_markdown_links.py`（由 GitHub Actions 自动运行）
 
 ## 一级目录导航
 
