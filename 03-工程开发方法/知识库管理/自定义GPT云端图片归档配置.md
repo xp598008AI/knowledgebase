@@ -1,58 +1,56 @@
-# 自定义 GPT：云端技术图片自动归档配置
+# 自定义 GPT：GitHub 直连技术图片自动归档配置
 
 ## 目标流程
 
-自定义 GPT 生成技术图片 → 用户明确要求归档（按当前需求配置为生成后自动提交）→ GPT Action 调用 Cloudflare Worker → Worker 将图片与元数据一次性提交到私有 GitHub 队列 → 现有 GitHub Actions 自动归档、插入 Markdown、更新资产索引并校验。
+自定义 GPT 生成技术图片 → GPT Action 先把元数据 JSON 写入 GitHub 私有仓库 → 再把真实图片字节写入同目录待归档队列 → 现有 GitHub Actions 自动将图片归档到目标 Markdown 同级的 `images/` 目录、插入引用、更新资产库索引并检查链接。
 
-**当前状态：Worker 源码和 OpenAPI 契约已提交；Worker 尚未部署，GPT Action 尚未配置，端到端图像字节传输尚未验证。**
+**不需要 Cloudflare、单独服务器或本地中转。** 但仍需在 GPT Builder 配置 GitHub Token。完整自动化是否可用，取决于 GPT 是否能访问并传递刚生成图片的真实二进制数据，必须通过实测确认。
 
-## 第一步：部署 Worker
+## 一、创建 GitHub Token
 
-在仓库根目录运行：
+1. 打开 GitHub → Settings → Developer settings → Personal access tokens → Fine-grained tokens。
+2. 创建仅授权 `xp598008AI/knowledgebase` 的 Token。
+3. Repository permissions 只授予 `Contents: Read and write`。
+4. 在 GPT Builder 的 Action Authentication 中选择 **API Key**，Auth Type 选择 **Bearer**，粘贴 Token。
+5. 不要把 Token 写进仓库、Instructions 或对话；不要使用有不必要全仓库权限的 Token。
 
-    cd cloudflare/technical-image-ingest
-    npm install --global wrangler
-    npx wrangler login
-    npx wrangler deploy
-    npx wrangler secret put GH_TOKEN
-    npx wrangler secret put INGEST_TOKEN
-
-按提示分别粘贴两个秘密值。GH_TOKEN 使用仅对 xp598008AI/knowledgebase 授权、Contents Read and write 的 fine-grained token；INGEST_TOKEN 是另外生成的高熵随机密钥。二者不能相同，也不能提交到 Git。
-
-部署后访问 Worker URL 的 /health，预期返回 ok=true。该检查不证明 GitHub 写入已成功。
-
-## 第二步：配置自定义 GPT Action
+## 二、配置 GPT Action
 
 1. 打开 GPT Builder → Configure → Actions → Create new action。
-2. 将 cloudflare/technical-image-ingest/openapi.yaml 的内容粘贴到 Schema。
-3. 把 servers[0].url 换成实际 Worker HTTPS URL。
-4. Authentication 选择 API Key，Auth Type 选择 Bearer，并填入 INGEST_TOKEN。
-5. 保存 Action；如 GPT Builder 报 Schema 错误，按界面提示修正。
+2. 将本目录中的 `GitHub直连图片归档Action.openapi.yaml` 完整内容粘贴到 Schema。
+3. Authentication 选择 API Key / Bearer，填入上一步创建的 Token。
+4. 保存并检查两个操作是否出现：
+   - `stageTechnicalImageMetadata`
+   - `uploadTechnicalImageToQueue`
 
-## 第三步：建议的 GPT Instructions
+该 Action 直接调用 GitHub REST API，不需要额外部署服务。
 
-将以下规则合并进自定义 GPT 的 Instructions，不要覆盖已有技术回答规范：
+## 三、合并到 GPT Instructions 的规则
 
-- 在此自定义 GPT 中，每次生成新的技术图片后自动调用 archiveTechnicalImage，除非用户明确要求不要归档。非技术图片不自动上传。
-- 上传前确定标题、目标 Markdown 路径和来源；审核状态默认 Draft。
-- image_base64 必须是当前生成图片的真实二进制 Base64。禁止编造 Base64、使用占位符，或用 Markdown/临时 URL 冒充图像数据。
-- 如果 Action 上下文无法访问当前生成图片的原始字节，明确说明本次尚未上传，不要提交空数据，也不要声称成功。
-- HTTP 201 只代表 GitHub 队列已收到提交。需等 GitHub Actions 完成，才可确认图片已归档并插入文档。
-- 目标文档必须是已存在的 Markdown；不确定时询问用户，不猜测路径。
-- AI 生成图片默认是概念图，状态使用 Draft。
+将以下规则合并进已有 Instructions，不要覆盖原有技术回答规范：
 
-## 第四步：端到端验收
+- 每次生成新的技术图片后，除非用户明确要求不要归档，否则尝试自动归档；非技术图片不自动归档。
+- 归档前确定图片标题、现有目标 Markdown 路径、来源和状态。AI 生成图默认状态为 Draft。目标文档必须已存在；不确定时先询问用户，不猜路径。
+- 生成一个 ASCII 文件名 stem（仅字母、数字、连字符、下划线），并选择 PNG/JPG/JPEG/WEBP/GIF/SVG 扩展名。
+- 先调用 `stageTechnicalImageMetadata`，写入 sidecar JSON。JSON 至少包含 `title`、`document`、`source`、`status`、`filename`。将 UTF-8 JSON 文本正确编码成标准 Base64，作为 API 的 `content`。
+- 只有元数据调用成功后，才调用 `uploadTechnicalImageToQueue` 上传图片。图片 `content` 必须是当前生成图片真实文件字节的标准 Base64，不含 data URI 前缀。
+- 严禁编造、截断、伪造 Base64；不要用图片 URL、Markdown、预览描述或占位符冒充图片字节。如果无法取得原始字节，明确说明本次没有上传。
+- 两次 GitHub API 调用都成功，只表示文件进入队列；必须等待 GitHub Actions 完成，才能报告“已归档”。如果第一步成功、第二步失败，队列会留下孤立 sidecar，应重试同名图片上传，不要重复创建 sidecar。
+- 如果 API 返回 422 或提示文件已存在，不要覆盖旧文件；换一个新的唯一 stem 并重新执行。
+- 只把非敏感且有权归档的图片上传到私有仓库。
 
-- [ ] Worker /health 可访问。
-- [ ] 未授权 POST 返回 HTTP 401。
-- [ ] 用真实非敏感图片调用 Action，返回 HTTP 201 和 commit URL。
-- [ ] 待归档目录出现图片和同名 JSON sidecar。
-- [ ] Auto-archive technical images 工作流成功。
-- [ ] 目标 Markdown 图片可正确渲染。
-- [ ] 资产库索引出现记录。
-- [ ] 图片与 Markdown 链接验证工作流成功。
-- [ ] 实测自定义 GPT 能把刚生成图片的原始字节传给 Action；否则不能将无本地中转标记为端到端完成。
+## 四、验收清单
 
-## 当前限制
+- [ ] Action Schema 保存成功，两个操作都可见。
+- [ ] Token 权限限定到目标私有仓库的 Contents 读写。
+- [ ] 选择一个已存在的 Markdown 文档作为目标。
+- [ ] 先创建同名 JSON sidecar，再上传真实的测试图片。
+- [ ] 图片与 JSON 出现在 `06-创新、扩展与职业竞争/技术图片资产库/待归档/`。
+- [ ] `Auto-archive technical images` 工作流成功。
+- [ ] 图片进入目标文档同级 `images/`，Markdown 引用可渲染。
+- [ ] 技术图片资产库 README 更新，链接检查通过。
+- [ ] 实测 GPT 可以传递刚生成图片的原始字节；若不行，不得声称全自动端到端已完成。
 
-OpenAPI 声明不能赋予模型读取图像二进制的能力。云端 Worker 消除了本地上传环节，但“生成图片 → 获取图片字节 → Action 请求”仍必须在 GPT Builder 中实测。只有测试通过，才可确认完整方案可用。
+## 当前状态
+
+GitHub 直连 Action 的 OpenAPI 契约已提交。尚未配置你的 GPT Action/Token，也尚未完成真实图片二进制传输和端到端测试。不要把“契约已写入仓库”当作“自动上传已验证”。
