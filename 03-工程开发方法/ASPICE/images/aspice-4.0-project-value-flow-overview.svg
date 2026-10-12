@@ -1,175 +1,97 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="1450" viewBox="0 0 2000 1450">
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1200" viewBox="0 0 1800 1200">
   <defs>
     <style>
-      .title{font:700 36px Arial,"Noto Sans SC",sans-serif;fill:#111827}
-      .sub{font:500 17px Arial,"Noto Sans SC",sans-serif;fill:#4B5563}
-      .h2{font:700 23px Arial,"Noto Sans SC",sans-serif;fill:#111827}
-      .h3{font:700 18px Arial,"Noto Sans SC",sans-serif;fill:#111827}
-      .txt{font:600 16px Arial,"Noto Sans SC",sans-serif;fill:#111827}
-      .sm{font:500 13px Arial,"Noto Sans SC",sans-serif;fill:#374151}
-      .xs{font:500 12px Arial,"Noto Sans SC",sans-serif;fill:#4B5563}
-      .node{stroke-width:2;rx:12;ry:12}
-      .main{stroke:#374151;stroke-width:3;fill:none;marker-end:url(#arrow)}
-      .thin{stroke:#6B7280;stroke-width:2;fill:none;marker-end:url(#arrow2)}
-      .feedback{stroke:#B91C1C;stroke-width:2.2;fill:none;stroke-dasharray:8 6;marker-end:url(#redArrow)}
-      .govern{stroke:#6B7280;stroke-width:2;fill:none;stroke-dasharray:6 5;marker-end:url(#arrow2)}
+      .t{font:700 34px Arial,"Noto Sans SC",sans-serif;fill:#111827}.s{font:500 15px Arial,"Noto Sans SC",sans-serif;fill:#475569}.h{font:700 20px Arial,"Noto Sans SC",sans-serif;fill:#111827}.n{font:600 14px Arial,"Noto Sans SC",sans-serif;fill:#111827}.x{font:500 12px Arial,"Noto Sans SC",sans-serif;fill:#475569}.box{rx:12;ry:12;stroke-width:2}.a{stroke:#334155;stroke-width:2.4;fill:none;marker-end:url(#m)}.d{stroke:#64748B;stroke-width:1.8;fill:none;stroke-dasharray:7 5;marker-end:url(#m2)}.r{stroke:#B91C1C;stroke-width:2;fill:none;stroke-dasharray:7 5;marker-end:url(#mr)}
     </style>
-    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto"><path d="M0,0 L0,8 L10,4 z" fill="#374151"/></marker>
-    <marker id="arrow2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#6B7280"/></marker>
-    <marker id="redArrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#B91C1C"/></marker>
+    <marker id="m" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#334155"/></marker>
+    <marker id="m2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#64748B"/></marker>
+    <marker id="mr" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#B91C1C"/></marker>
   </defs>
+  <rect width="1800" height="1200" fill="#F8FAFC"/>
+  <text x="900" y="48" text-anchor="middle" class="t">Automotive SPICE 4.0 项目价值流总览</text>
+  <text x="900" y="76" text-anchor="middle" class="s">从真实项目流转理解 32 个过程：输入 → 系统分解 → 多域开发 → 集成验证 → 确认 → 发布 → 反馈改进</text>
 
-  <rect width="2000" height="1450" fill="#F8FAFC"/>
-  <text x="1000" y="52" text-anchor="middle" class="title">Automotive SPICE 4.0 项目价值流总览</text>
-  <text x="1000" y="82" text-anchor="middle" class="sub">不是“过程清单图”，而是把 32 个过程放回真实项目流转：输入 → 系统分解 → 多域开发 → 集成验证 → Validation → Release → 问题/变更/改进回流</text>
+  <rect x="55" y="100" width="1690" height="100" rx="16" fill="#FFF7ED" stroke="#F59E0B" stroke-width="2"/>
+  <text x="80" y="130" class="h">① 项目输入与范围</text>
+  <rect class="box" x="80" y="145" width="220" height="40" fill="#FFFFFF" stroke="#D97706"/><text x="190" y="170" text-anchor="middle" class="n">客户 / 法规 / 合同 / 场景</text>
+  <rect class="box" x="325" y="145" width="170" height="40" fill="#FFEDD5" stroke="#D97706"/><text x="410" y="170" text-anchor="middle" class="n">SYS.1 需求获取</text>
+  <rect class="box" x="520" y="145" width="170" height="40" fill="#F1F5F9" stroke="#64748B"/><text x="605" y="170" text-anchor="middle" class="n">MAN.3 项目管理</text>
+  <rect class="box" x="715" y="145" width="170" height="40" fill="#F1F5F9" stroke="#64748B"/><text x="800" y="170" text-anchor="middle" class="n">MAN.5 风险管理</text>
+  <rect class="box" x="910" y="145" width="170" height="40" fill="#F1F5F9" stroke="#64748B"/><text x="995" y="170" text-anchor="middle" class="n">MAN.6 度量</text>
+  <rect class="box" x="1105" y="145" width="170" height="40" fill="#FFEDD5" stroke="#D97706"/><text x="1190" y="170" text-anchor="middle" class="n">ACQ.4 供应商监控</text>
+  <rect class="box" x="1300" y="145" width="200" height="40" fill="#FEF3C7" stroke="#D97706"/><text x="1400" y="170" text-anchor="middle" class="n">G0 范围与计划门禁</text>
+  <path d="M300 165 L325 165 M495 165 L520 165" class="a"/>
 
-  <!-- Legend -->
-  <g transform="translate(70,105)">
-    <rect x="0" y="0" width="1860" height="62" rx="14" fill="#FFFFFF" stroke="#CBD5E1"/>
-    <text x="24" y="25" class="txt">读图方式</text>
-    <circle cx="165" cy="22" r="10" fill="#2563EB"/><text x="185" y="27" class="sm">需求/系统分解</text>
-    <circle cx="340" cy="22" r="10" fill="#7C3AED"/><text x="360" y="27" class="sm">工程域开发</text>
-    <circle cx="525" cy="22" r="10" fill="#059669"/><text x="545" y="27" class="sm">验证/确认/发布</text>
-    <circle cx="740" cy="22" r="10" fill="#D97706"/><text x="760" y="27" class="sm">门禁/范围/供应链</text>
-    <circle cx="980" cy="22" r="10" fill="#6B7280"/><text x="1000" y="27" class="sm">管理/支撑/组织治理</text>
-    <circle cx="1240" cy="22" r="10" fill="#B91C1C"/><text x="1260" y="27" class="sm">问题/变更/反馈闭环</text>
-    <text x="24" y="49" class="xs">主箭头表示典型项目价值流；虚线表示治理或反馈，不代表 Automotive SPICE 强制时序。过程适用范围仍以项目评估目的、客户要求和裁剪结果为准。</text>
-  </g>
+  <rect x="55" y="225" width="1690" height="660" rx="18" fill="#FFFFFF" stroke="#94A3B8" stroke-width="2"/>
+  <text x="80" y="258" class="h">② 核心价值流：系统层定义 → 工程域并行 → 系统层汇合</text>
 
-  <!-- Phase 1: Input and scope -->
-  <g transform="translate(70,195)">
-    <rect x="0" y="0" width="1860" height="120" rx="18" fill="#FFF7ED" stroke="#FDBA74" stroke-width="2"/>
-    <text x="25" y="31" class="h2">① 项目输入与范围：先回答“为什么做、做什么、谁负责、评什么”</text>
-    <rect class="node" x="25" y="48" width="270" height="52" fill="#FFFFFF" stroke="#D97706"/>
-    <text x="160" y="70" text-anchor="middle" class="txt">客户 / 法规 / 合同 / 场景</text><text x="160" y="90" text-anchor="middle" class="xs">Stakeholder needs & constraints</text>
-    <rect class="node" x="325" y="48" width="220" height="52" fill="#FFF7ED" stroke="#D97706"/>
-    <text x="435" y="70" text-anchor="middle" class="txt">SYS.1 需求获取</text><text x="435" y="90" text-anchor="middle" class="xs">需求来源与协商入口</text>
-    <rect class="node" x="575" y="48" width="220" height="52" fill="#F3F4F6" stroke="#6B7280"/>
-    <text x="685" y="70" text-anchor="middle" class="txt">MAN.3 项目管理</text><text x="685" y="90" text-anchor="middle" class="xs">范围、计划、资源、里程碑</text>
-    <rect class="node" x="825" y="48" width="220" height="52" fill="#F3F4F6" stroke="#6B7280"/>
-    <text x="935" y="70" text-anchor="middle" class="txt">MAN.5 风险管理</text><text x="935" y="90" text-anchor="middle" class="xs">识别、处置、跟踪</text>
-    <rect class="node" x="1075" y="48" width="220" height="52" fill="#F3F4F6" stroke="#6B7280"/>
-    <text x="1185" y="70" text-anchor="middle" class="txt">MAN.6 度量</text><text x="1185" y="90" text-anchor="middle" class="xs">目标、指标、趋势</text>
-    <rect class="node" x="1325" y="48" width="220" height="52" fill="#FFF7ED" stroke="#D97706"/>
-    <text x="1435" y="70" text-anchor="middle" class="txt">ACQ.4 供应商监控</text><text x="1435" y="90" text-anchor="middle" class="xs">供方进度/质量/交付/问题</text>
-    <rect class="node" x="1575" y="48" width="240" height="52" fill="#FFF7ED" stroke="#D97706"/>
-    <text x="1695" y="70" text-anchor="middle" class="txt">G0 范围与计划门禁</text><text x="1695" y="90" text-anchor="middle" class="xs">范围、责任、裁剪理由明确</text>
-  </g>
+  <rect x="85" y="285" width="400" height="180" rx="14" fill="#EFF6FF" stroke="#60A5FA" stroke-width="2"/>
+  <text x="105" y="313" class="h">A. 系统定义</text>
+  <rect class="box" x="115" y="335" width="150" height="52" fill="#DBEAFE" stroke="#2563EB"/><text x="190" y="357" text-anchor="middle" class="n">SYS.2</text><text x="190" y="376" text-anchor="middle" class="x">系统需求分析</text>
+  <rect class="box" x="300" y="335" width="150" height="52" fill="#DBEAFE" stroke="#2563EB"/><text x="375" y="357" text-anchor="middle" class="n">SYS.3</text><text x="375" y="376" text-anchor="middle" class="x">系统架构设计</text>
+  <rect class="box" x="205" y="405" width="150" height="40" fill="#FEF3C7" stroke="#D97706"/><text x="280" y="430" text-anchor="middle" class="n">G1/G2 基线门禁</text>
+  <path d="M265 361 L300 361" class="a"/>
 
-  <!-- Main value stream -->
-  <rect x="70" y="345" width="1860" height="690" rx="20" fill="#FFFFFF" stroke="#94A3B8" stroke-width="2"/>
-  <text x="95" y="382" class="h2">② 核心项目价值流：系统层统一定义，工程域并行实现，再回到系统层汇合</text>
+  <rect x="515" y="285" width="760" height="500" rx="14" fill="#FAF5FF" stroke="#C4B5FD" stroke-width="2"/>
+  <text x="535" y="313" class="h">B. 工程域并行开发</text>
 
-  <!-- System definition -->
-  <g>
-    <rect x="100" y="410" width="510" height="205" rx="16" fill="#EFF6FF" stroke="#60A5FA" stroke-width="2"/>
-    <text x="120" y="440" class="h3">A. 系统定义与分配</text>
-    <rect class="node" x="125" y="468" width="205" height="58" fill="#DBEAFE" stroke="#2563EB"/>
-    <text x="227" y="491" text-anchor="middle" class="txt">SYS.2 系统需求分析</text><text x="227" y="513" text-anchor="middle" class="xs">需求基线 / 可验证性 / 一致性</text>
-    <rect class="node" x="365" y="468" width="205" height="58" fill="#DBEAFE" stroke="#2563EB"/>
-    <text x="467" y="491" text-anchor="middle" class="txt">SYS.3 系统架构设计</text><text x="467" y="513" text-anchor="middle" class="xs">系统元素 / 接口 / 分配</text>
-    <rect class="node" x="245" y="548" width="205" height="46" fill="#FFF7ED" stroke="#D97706"/>
-    <text x="347" y="567" text-anchor="middle" class="txt">G1/G2 基线门禁</text><text x="347" y="585" text-anchor="middle" class="xs">需求基线 + 架构基线</text>
-    <path d="M330 497 L365 497" class="main"/>
-  </g>
+  <rect x="540" y="335" width="710" height="110" rx="12" fill="#F5F3FF" stroke="#A78BFA"/>
+  <text x="555" y="360" class="n">SWE 软件工程</text>
+  <rect class="box" x="560" y="375" width="95" height="44" fill="#EDE9FE" stroke="#7C3AED"/><text x="607" y="402" text-anchor="middle" class="n">SWE.1</text>
+  <rect class="box" x="670" y="375" width="95" height="44" fill="#EDE9FE" stroke="#7C3AED"/><text x="717" y="402" text-anchor="middle" class="n">SWE.2</text>
+  <rect class="box" x="780" y="375" width="95" height="44" fill="#EDE9FE" stroke="#7C3AED"/><text x="827" y="402" text-anchor="middle" class="n">SWE.3</text>
+  <rect class="box" x="890" y="375" width="95" height="44" fill="#D1FAE5" stroke="#059669"/><text x="937" y="402" text-anchor="middle" class="n">SWE.4</text>
+  <rect class="box" x="1000" y="375" width="95" height="44" fill="#D1FAE5" stroke="#059669"/><text x="1047" y="402" text-anchor="middle" class="n">SWE.5</text>
+  <rect class="box" x="1110" y="375" width="95" height="44" fill="#D1FAE5" stroke="#059669"/><text x="1157" y="402" text-anchor="middle" class="n">SWE.6</text>
+  <path d="M655 397 L670 397 M765 397 L780 397 M875 397 L890 397 M985 397 L1000 397 M1095 397 L1110 397" class="a"/>
 
-  <!-- Domain engineering -->
-  <g>
-    <rect x="650" y="410" width="760" height="470" rx="16" fill="#FAF5FF" stroke="#C4B5FD" stroke-width="2"/>
-    <text x="675" y="440" class="h3">B. 工程域并行开发（Plug-in 思想）：软件 / 硬件 / 机器学习按项目需要组合</text>
+  <rect x="540" y="465" width="710" height="110" rx="12" fill="#FFF7ED" stroke="#FDBA74"/>
+  <text x="555" y="490" class="n">HWE 硬件工程</text>
+  <rect class="box" x="620" y="505" width="120" height="44" fill="#FFEDD5" stroke="#EA580C"/><text x="680" y="532" text-anchor="middle" class="n">HWE.1</text>
+  <rect class="box" x="775" y="505" width="120" height="44" fill="#FFEDD5" stroke="#EA580C"/><text x="835" y="532" text-anchor="middle" class="n">HWE.2</text>
+  <rect class="box" x="930" y="505" width="120" height="44" fill="#D1FAE5" stroke="#059669"/><text x="990" y="532" text-anchor="middle" class="n">HWE.3</text>
+  <rect class="box" x="1085" y="505" width="120" height="44" fill="#D1FAE5" stroke="#059669"/><text x="1145" y="532" text-anchor="middle" class="n">HWE.4</text>
+  <path d="M740 527 L775 527 M895 527 L930 527 M1050 527 L1085 527" class="a"/>
 
-    <!-- SWE -->
-    <rect x="680" y="468" width="700" height="110" rx="14" fill="#F5F3FF" stroke="#A78BFA"/>
-    <text x="695" y="492" class="txt">SWE 软件工程</text>
-    <rect class="node" x="695" y="510" width="105" height="46" fill="#EDE9FE" stroke="#7C3AED"/><text x="747" y="537" text-anchor="middle" class="sm">SWE.1</text>
-    <rect class="node" x="815" y="510" width="105" height="46" fill="#EDE9FE" stroke="#7C3AED"/><text x="867" y="537" text-anchor="middle" class="sm">SWE.2</text>
-    <rect class="node" x="935" y="510" width="105" height="46" fill="#EDE9FE" stroke="#7C3AED"/><text x="987" y="537" text-anchor="middle" class="sm">SWE.3</text>
-    <rect class="node" x="1055" y="510" width="105" height="46" fill="#D1FAE5" stroke="#059669"/><text x="1107" y="537" text-anchor="middle" class="sm">SWE.4</text>
-    <rect class="node" x="1175" y="510" width="105" height="46" fill="#D1FAE5" stroke="#059669"/><text x="1227" y="537" text-anchor="middle" class="sm">SWE.5</text>
-    <rect class="node" x="1295" y="510" width="70" height="46" fill="#D1FAE5" stroke="#059669"/><text x="1330" y="537" text-anchor="middle" class="sm">SWE.6</text>
-    <path d="M800 533 L815 533 M920 533 L935 533 M1040 533 L1055 533 M1160 533 L1175 533 M1280 533 L1295 533" class="thin"/>
+  <rect x="540" y="595" width="710" height="110" rx="12" fill="#FDF4FF" stroke="#D8B4FE"/>
+  <text x="555" y="620" class="n">MLE 机器学习工程（适用时）</text>
+  <rect class="box" x="620" y="635" width="120" height="44" fill="#F3E8FF" stroke="#9333EA"/><text x="680" y="662" text-anchor="middle" class="n">MLE.1</text>
+  <rect class="box" x="775" y="635" width="120" height="44" fill="#F3E8FF" stroke="#9333EA"/><text x="835" y="662" text-anchor="middle" class="n">MLE.2</text>
+  <rect class="box" x="930" y="635" width="120" height="44" fill="#F3E8FF" stroke="#9333EA"/><text x="990" y="662" text-anchor="middle" class="n">MLE.3</text>
+  <rect class="box" x="1085" y="635" width="120" height="44" fill="#D1FAE5" stroke="#059669"/><text x="1145" y="662" text-anchor="middle" class="n">MLE.4</text>
+  <path d="M740 657 L775 657 M895 657 L930 657 M1050 657 L1085 657" class="a"/>
 
-    <!-- HWE -->
-    <rect x="680" y="598" width="700" height="110" rx="14" fill="#FFF7ED" stroke="#FDBA74"/>
-    <text x="695" y="622" class="txt">HWE 硬件工程</text>
-    <rect class="node" x="760" y="640" width="130" height="46" fill="#FFEDD5" stroke="#EA580C"/><text x="825" y="667" text-anchor="middle" class="sm">HWE.1 需求</text>
-    <rect class="node" x="920" y="640" width="130" height="46" fill="#FFEDD5" stroke="#EA580C"/><text x="985" y="667" text-anchor="middle" class="sm">HWE.2 设计</text>
-    <rect class="node" x="1080" y="640" width="130" height="46" fill="#D1FAE5" stroke="#059669"/><text x="1145" y="667" text-anchor="middle" class="sm">HWE.3 设计验证</text>
-    <rect class="node" x="1240" y="640" width="130" height="46" fill="#D1FAE5" stroke="#059669"/><text x="1305" y="667" text-anchor="middle" class="sm">HWE.4 需求验证</text>
-    <path d="M890 663 L920 663 M1050 663 L1080 663 M1210 663 L1240 663" class="thin"/>
+  <rect class="box" x="715" y="725" width="355" height="42" fill="#FEF3C7" stroke="#D97706"/><text x="892" y="751" text-anchor="middle" class="n">G3 域内验证完成：需求、设计、接口、证据可追溯</text>
 
-    <!-- MLE -->
-    <rect x="680" y="728" width="700" height="110" rx="14" fill="#FDF4FF" stroke="#D8B4FE"/>
-    <text x="695" y="752" class="txt">MLE 机器学习工程（项目涉及 ML 时）</text>
-    <rect class="node" x="760" y="770" width="130" height="46" fill="#F3E8FF" stroke="#9333EA"/><text x="825" y="797" text-anchor="middle" class="sm">MLE.1 需求</text>
-    <rect class="node" x="920" y="770" width="130" height="46" fill="#F3E8FF" stroke="#9333EA"/><text x="985" y="797" text-anchor="middle" class="sm">MLE.2 架构</text>
-    <rect class="node" x="1080" y="770" width="130" height="46" fill="#F3E8FF" stroke="#9333EA"/><text x="1145" y="797" text-anchor="middle" class="sm">MLE.3 训练</text>
-    <rect class="node" x="1240" y="770" width="130" height="46" fill="#D1FAE5" stroke="#059669"/><text x="1305" y="797" text-anchor="middle" class="sm">MLE.4 模型测试</text>
-    <path d="M890 793 L920 793 M1050 793 L1080 793 M1210 793 L1240 793" class="thin"/>
+  <rect x="1305" y="285" width="400" height="500" rx="14" fill="#ECFDF5" stroke="#6EE7B7" stroke-width="2"/>
+  <text x="1325" y="313" class="h">C. 系统汇合、确认与发布</text>
+  <rect class="box" x="1340" y="350" width="150" height="52" fill="#D1FAE5" stroke="#059669"/><text x="1415" y="372" text-anchor="middle" class="n">SYS.4</text><text x="1415" y="391" text-anchor="middle" class="x">系统集成验证</text>
+  <rect class="box" x="1520" y="350" width="150" height="52" fill="#D1FAE5" stroke="#059669"/><text x="1595" y="372" text-anchor="middle" class="n">SYS.5</text><text x="1595" y="391" text-anchor="middle" class="x">系统验证</text>
+  <rect class="box" x="1430" y="430" width="150" height="52" fill="#D1FAE5" stroke="#059669"/><text x="1505" y="452" text-anchor="middle" class="n">VAL.1</text><text x="1505" y="471" text-anchor="middle" class="x">Validation</text>
+  <rect class="box" x="1430" y="510" width="150" height="52" fill="#D1FAE5" stroke="#059669"/><text x="1505" y="532" text-anchor="middle" class="n">SPL.2</text><text x="1505" y="551" text-anchor="middle" class="x">产品发布</text>
+  <rect class="box" x="1375" y="590" width="260" height="42" fill="#FEF3C7" stroke="#D97706"/><text x="1505" y="616" text-anchor="middle" class="n">G4 发布门禁：验证、确认、问题、基线齐套</text>
+  <path d="M1490 376 L1520 376 M1595 402 L1595 430 L1580 430 M1505 482 L1505 510" class="a"/>
 
-    <rect class="node" x="885" y="845" width="280" height="42" fill="#FFF7ED" stroke="#D97706"/>
-    <text x="1025" y="871" text-anchor="middle" class="txt">G3 工程域验证完成 / 可集成</text>
-  </g>
+  <path d="M485 375 L515 375" class="a"/>
+  <path d="M1275 535 L1305 535" class="a"/>
 
-  <!-- System recomposition -->
-  <g>
-    <rect x="1450" y="410" width="440" height="470" rx="16" fill="#ECFDF5" stroke="#6EE7B7" stroke-width="2"/>
-    <text x="1475" y="440" class="h3">C. 系统重新汇合、确认与交付</text>
-    <rect class="node" x="1490" y="478" width="360" height="58" fill="#D1FAE5" stroke="#059669"/>
-    <text x="1670" y="501" text-anchor="middle" class="txt">SYS.4 系统集成与集成验证</text><text x="1670" y="523" text-anchor="middle" class="xs">验证系统元素、接口与架构一致性</text>
-    <rect class="node" x="1490" y="558" width="360" height="58" fill="#D1FAE5" stroke="#059669"/>
-    <text x="1670" y="581" text-anchor="middle" class="txt">SYS.5 系统验证</text><text x="1670" y="603" text-anchor="middle" class="xs">验证最终系统满足系统需求</text>
-    <rect class="node" x="1490" y="638" width="360" height="58" fill="#D1FAE5" stroke="#059669"/>
-    <text x="1670" y="661" text-anchor="middle" class="txt">VAL.1 Validation</text><text x="1670" y="683" text-anchor="middle" class="xs">预期使用环境下是否满足利益相关方用途</text>
-    <rect class="node" x="1490" y="718" width="360" height="58" fill="#D1FAE5" stroke="#059669"/>
-    <text x="1670" y="741" text-anchor="middle" class="txt">SPL.2 Product Release</text><text x="1670" y="763" text-anchor="middle" class="xs">发布包、版本、已知问题、交付记录</text>
-    <rect class="node" x="1545" y="805" width="250" height="42" fill="#FFF7ED" stroke="#D97706"/>
-    <text x="1670" y="831" text-anchor="middle" class="txt">G4/G5 验证确认与发布门禁</text>
-    <path d="M1670 536 L1670 558 M1670 616 L1670 638 M1670 696 L1670 718" class="main"/>
-  </g>
+  <rect x="55" y="910" width="1690" height="155" rx="16" fill="#F1F5F9" stroke="#94A3B8" stroke-width="2"/>
+  <text x="80" y="940" class="h">③ 全生命周期控制总线</text>
+  <rect class="box" x="85" y="965" width="160" height="42" fill="#F8FAFC" stroke="#64748B"/><text x="165" y="991" text-anchor="middle" class="n">SUP.1 质量保证</text>
+  <rect class="box" x="265" y="965" width="180" height="42" fill="#F8FAFC" stroke="#64748B"/><text x="355" y="991" text-anchor="middle" class="n">SUP.8 配置管理</text>
+  <rect class="box" x="465" y="965" width="190" height="42" fill="#FEE2E2" stroke="#B91C1C"/><text x="560" y="991" text-anchor="middle" class="n">SUP.9 问题解决</text>
+  <rect class="box" x="675" y="965" width="210" height="42" fill="#FEE2E2" stroke="#B91C1C"/><text x="780" y="991" text-anchor="middle" class="n">SUP.10 变更请求管理</text>
+  <rect class="box" x="905" y="965" width="205" height="42" fill="#F8FAFC" stroke="#64748B"/><text x="1007" y="991" text-anchor="middle" class="n">SUP.11 ML 数据管理</text>
+  <rect class="box" x="1130" y="965" width="165" height="42" fill="#F8FAFC" stroke="#64748B"/><text x="1212" y="991" text-anchor="middle" class="n">PIM.3 过程改进</text>
+  <rect class="box" x="1315" y="965" width="205" height="42" fill="#F8FAFC" stroke="#64748B"/><text x="1417" y="991" text-anchor="middle" class="n">REU.2 产品复用管理</text>
+  <rect class="box" x="1540" y="965" width="160" height="42" fill="#F8FAFC" stroke="#64748B"/><text x="1620" y="991" text-anchor="middle" class="n">经验与组织资产</text>
 
-  <!-- Main cross-phase arrows -->
-  <path d="M610 510 C625 510,635 510,650 510" class="main"/>
-  <path d="M1410 645 C1425 645,1435 645,1450 645" class="main"/>
+  <path d="M560 1007 C560 1100 260 1100 260 1060" class="r"/>
+  <path d="M780 1007 C780 1120 410 1120 410 1060" class="r"/>
+  <path d="M1212 1007 C1212 1100 1500 1100 1500 1060" class="d"/>
 
-  <!-- Mapping notes -->
-  <g>
-    <rect x="100" y="905" width="1750" height="100" rx="14" fill="#F8FAFC" stroke="#CBD5E1"/>
-    <text x="120" y="932" class="txt">关键工程映射（用于理解验证对象，不等于强制瀑布时序）</text>
-    <text x="120" y="960" class="sm">SYS.2 ↔ SYS.5　｜　SYS.3 ↔ SYS.4　｜　SWE.1 ↔ SWE.6　｜　SWE.2 ↔ SWE.5　｜　SWE.3 ↔ SWE.4　｜　HWE.1 ↔ HWE.4　｜　HWE.2 ↔ HWE.3</text>
-    <text x="120" y="985" class="sm">关键理解：SYS.1 是需求获取入口；VAL.1 不是 SYS.5 的同义词；工程域完成后必须回到系统层重新集成与验证。</text>
-  </g>
-
-  <!-- Governance bus -->
-  <g transform="translate(70,1065)">
-    <rect x="0" y="0" width="1860" height="165" rx="18" fill="#F3F4F6" stroke="#9CA3AF" stroke-width="2"/>
-    <text x="25" y="32" class="h2">③ 横向控制总线：SUP / MAN 贯穿所有阶段，不是最后补材料</text>
-    <rect class="node" x="30" y="58" width="220" height="58" fill="#FFFFFF" stroke="#6B7280"/><text x="140" y="82" text-anchor="middle" class="txt">SUP.1 质量保证</text><text x="140" y="104" text-anchor="middle" class="xs">过程/工作产品符合性</text>
-    <rect class="node" x="280" y="58" width="220" height="58" fill="#FFFFFF" stroke="#6B7280"/><text x="390" y="82" text-anchor="middle" class="txt">SUP.8 配置管理</text><text x="390" y="104" text-anchor="middle" class="xs">版本、基线、状态、可复现</text>
-    <rect class="node" x="530" y="58" width="220" height="58" fill="#FEE2E2" stroke="#B91C1C"/><text x="640" y="82" text-anchor="middle" class="txt">SUP.9 问题解决</text><text x="640" y="104" text-anchor="middle" class="xs">发现 → 分析 → 关闭</text>
-    <rect class="node" x="780" y="58" width="220" height="58" fill="#FEE2E2" stroke="#B91C1C"/><text x="890" y="82" text-anchor="middle" class="txt">SUP.10 变更请求</text><text x="890" y="104" text-anchor="middle" class="xs">影响分析 → 批准 → 回归</text>
-    <rect class="node" x="1030" y="58" width="220" height="58" fill="#FFFFFF" stroke="#6B7280"/><text x="1140" y="82" text-anchor="middle" class="txt">SUP.11 ML 数据管理</text><text x="1140" y="104" text-anchor="middle" class="xs">数据来源、质量、版本、追溯</text>
-    <rect class="node" x="1280" y="58" width="250" height="58" fill="#FFFFFF" stroke="#6B7280"/><text x="1405" y="82" text-anchor="middle" class="txt">MAN.3 / MAN.5 / MAN.6</text><text x="1405" y="104" text-anchor="middle" class="xs">计划 + 风险 + 度量共同驱动决策</text>
-    <rect class="node" x="1560" y="58" width="260" height="58" fill="#FFF7ED" stroke="#D97706"/><text x="1690" y="82" text-anchor="middle" class="txt">关键门禁判定</text><text x="1690" y="104" text-anchor="middle" class="xs">未关闭高风险/缺陷/变更不可静默带入</text>
-  </g>
-
-  <!-- Organizational feedback -->
-  <g transform="translate(70,1260)">
-    <rect x="0" y="0" width="1860" height="135" rx="18" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="2"/>
-    <text x="25" y="31" class="h2">④ 组织级反馈闭环：项目不是终点，经验必须回流到下一轮</text>
-    <rect class="node" x="40" y="56" width="330" height="54" fill="#FFFFFF" stroke="#6B7280"/><text x="205" y="78" text-anchor="middle" class="txt">PIM.3 过程改进</text><text x="205" y="99" text-anchor="middle" class="xs">评估发现/度量/经验 → 组织过程更新</text>
-    <rect class="node" x="410" y="56" width="330" height="54" fill="#FFFFFF" stroke="#6B7280"/><text x="575" y="78" text-anchor="middle" class="txt">REU.2 产品复用管理</text><text x="575" y="99" text-anchor="middle" class="xs">复用资产准入、版本、维护责任</text>
-    <rect class="node" x="780" y="56" width="330" height="54" fill="#FEE2E2" stroke="#B91C1C"/><text x="945" y="78" text-anchor="middle" class="txt">问题 / 变更 / 风险经验库</text><text x="945" y="99" text-anchor="middle" class="xs">典型失效、回归策略、边界条件</text>
-    <rect class="node" x="1150" y="56" width="330" height="54" fill="#FFFFFF" stroke="#6B7280"/><text x="1315" y="78" text-anchor="middle" class="txt">下一项目策划与架构复用</text><text x="1315" y="99" text-anchor="middle" class="xs">把组织能力重新注入 G0/G1/G2</text>
-    <rect class="node" x="1520" y="56" width="300" height="54" fill="#FFF7ED" stroke="#D97706"/><text x="1670" y="78" text-anchor="middle" class="txt">核心目标：可重复、可追溯、可改进</text><text x="1670" y="99" text-anchor="middle" class="xs">从“项目成功”升级为“组织能力”</text>
-  </g>
-
-  <!-- Feedback arrows -->
-  <path d="M960 1065 C960 1035,960 1020,960 1005" class="feedback"/>
-  <path d="M720 1260 C720 1235,720 1225,720 1215" class="feedback"/>
-  <path d="M1385 1260 C1385 1180,1610 1180,1610 315" class="feedback"/>
-  <path d="M1840 735 C1930 735,1930 1140,1000 1140" class="feedback"/>
-
-  <!-- Footer -->
-  <text x="1000" y="1425" text-anchor="middle" class="xs">学习/实践视图：覆盖 Automotive SPICE 4.0 PRM 的 32 个过程；用于理解典型项目流转与治理闭环，不替代 PAM/PRM、VDA Guidelines、客户特定要求或 assessor 判断。</text>
+  <rect x="55" y="1090" width="1690" height="70" rx="14" fill="#FFFFFF" stroke="#CBD5E1"/>
+  <text x="80" y="1117" class="n">关键理解：</text>
+  <text x="180" y="1117" class="s">SYS.1 是需求入口；SYS.3 将系统需求分配到 SWE / HWE / MLE；各域完成后回到 SYS.4 / SYS.5；VAL.1 关注预期用途；SPL.2 完成受控发布。</text>
+  <text x="80" y="1143" class="s">管理、质量、配置、问题、变更、度量、改进不是“最后补材料”，而是贯穿项目的控制机制。箭头表示典型工程信息流，不代表 ASPICE 强制时序。</text>
 </svg>
