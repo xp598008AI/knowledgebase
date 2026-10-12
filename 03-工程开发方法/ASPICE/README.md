@@ -14,6 +14,7 @@
 - [工作产品与证据清单模板](templates/ASPICE工作产品与证据清单模板.md)：统一管理证据位置、版本、状态和上下游关系。
 - [评审证据记录模板](templates/ASPICE评审证据记录模板.md)：记录检查结果、发现项、关闭证据与评审结论。
 - [EVCC 通信超时端到端示范](examples/EVCC通信超时功能示范/README.md)：把系统/软件需求、状态机、测试追溯、缺陷变更与基线串成一个可实践案例。
+- [EVCC 项目 ASPICE 实施总控表](EVCC项目ASPICE实施总控表.md)：项目阶段、工作产品、RACI、里程碑准入/退出条件、风险、变更与证据导航的统一入口。
 - [ASPICE 开发 V 模型示意图](images/aspice-v-model.svg)
 - [ASPICE 工程闭环总览图](images/aspice-engineering-loop.svg)
 
