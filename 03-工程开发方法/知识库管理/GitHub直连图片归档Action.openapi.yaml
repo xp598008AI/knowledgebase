@@ -1,0 +1,96 @@
+openapi: 3.1.0
+info:
+  title: GitHub Direct Technical Image Archive
+  version: 1.0.0
+  description: Directly stage technical images in the private knowledgebase using GitHub's Contents API. Upload the JSON sidecar first, then upload the image to trigger the existing archive workflow.
+servers:
+  - url: https://api.github.com
+security:
+  - GitHubBearer: []
+paths:
+  /repos/xp598008AI/knowledgebase/contents/06-%E5%88%9B%E6%96%B0%E3%80%81%E6%89%A9%E5%B1%95%E4%B8%8E%E8%81%8C%E4%B8%9A%E7%AB%9E%E4%BA%89/%E6%8A%80%E6%9C%AF%E5%9B%BE%E7%89%87%E8%B5%84%E4%BA%A7%E5%BA%93/%E5%BE%85%E5%BD%92%E6%A1%A3/{stem}.json:
+    put:
+      operationId: stageTechnicalImageMetadata
+      summary: Stage metadata before uploading its image
+      description: Create the JSON sidecar first. Encode the UTF-8 JSON text as standard Base64 and provide that encoded string as content. Use the same filename stem as the image, without its extension. Only target an existing Markdown document in this repository. This action creates a new file and intentionally does not overwrite existing files.
+      parameters:
+        - name: stem
+          in: path
+          required: true
+          description: Filename stem using only ASCII letters, digits, hyphens, or underscores, maximum 90 characters.
+          schema:
+            type: string
+            pattern: '^[A-Za-z0-9_-]{1,90}$'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [message, content, branch]
+              properties:
+                message:
+                  type: string
+                  example: "docs: stage technical image metadata - EVCC architecture"
+                content:
+                  type: string
+                  contentEncoding: base64
+                  description: Base64-encoded UTF-8 JSON sidecar with title, document, source, status, and filename fields.
+                branch:
+                  type: string
+                  enum: [main]
+      responses:
+        '201':
+          description: Metadata sidecar created. Upload the image next.
+        '401':
+          description: Invalid GitHub token
+        '404':
+          description: Repository or path not found
+        '422':
+          description: File already exists or validation failed
+  /repos/xp598008AI/knowledgebase/contents/06-%E5%88%9B%E6%96%B0%E3%80%81%E6%89%A9%E5%B1%95%E4%B8%8E%E8%81%8C%E4%B8%9A%E7%AB%9E%E4%BA%89/%E6%8A%80%E6%9C%AF%E5%9B%BE%E7%89%87%E8%B5%84%E4%BA%A7%E5%BA%93/%E5%BE%85%E5%BD%92%E6%A1%A3/{filename}:
+    put:
+      operationId: uploadTechnicalImageToQueue
+      summary: Upload the generated image and trigger automatic archiving
+      description: After stageTechnicalImageMetadata succeeds, upload the actual generated image bytes encoded as standard Base64. Never invent or approximate image bytes. Use exactly the same stem as the sidecar, with a supported image extension. This creates a new file and intentionally does not overwrite existing files.
+      parameters:
+        - name: filename
+          in: path
+          required: true
+          description: Filename including extension; ASCII letters, digits, hyphens, underscores and one supported extension only.
+          schema:
+            type: string
+            pattern: '^[A-Za-z0-9_-]{1,90}\.(png|jpg|jpeg|webp|gif|svg)$'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [message, content, branch]
+              properties:
+                message:
+                  type: string
+                  example: "docs: queue technical image - EVCC architecture"
+                content:
+                  type: string
+                  contentEncoding: base64
+                  description: Actual image file bytes encoded as standard Base64, with no data URI prefix, URL, Markdown, or placeholder.
+                branch:
+                  type: string
+                  enum: [main]
+      responses:
+        '201':
+          description: Image created in the private repository queue. This is not yet proof that archiving succeeded.
+        '401':
+          description: Invalid GitHub token
+        '404':
+          description: Repository or path not found
+        '422':
+          description: File already exists or validation failed
+components:
+  securitySchemes:
+    GitHubBearer:
+      type: http
+      scheme: bearer
+      bearerFormat: GitHub fine-grained personal access token
