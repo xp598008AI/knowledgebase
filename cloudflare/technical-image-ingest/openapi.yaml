@@ -1,0 +1,63 @@
+openapi: 3.1.0
+info:
+  title: Private Knowledgebase Technical Image Ingestion
+  version: 1.0.0
+  description: Upload an image to the private knowledgebase queue; GitHub Actions archives it into Markdown.
+servers:
+  - url: https://REPLACE-WITH-YOUR-WORKER.workers.dev
+paths:
+  /v1/archive-image:
+    post:
+      operationId: archiveTechnicalImage
+      summary: Archive a generated technical image
+      description: Call only when the user explicitly asks to archive the image. image_base64 must be actual standard Base64 image bytes, not a URL, Markdown, or data URI. Never fabricate image bytes.
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ArchiveImageRequest'
+      responses:
+        '201':
+          description: Image and metadata queued in one Git commit.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  accepted: { type: boolean }
+                  commit: { type: string }
+                  commit_url: { type: string }
+                  target_document: { type: string }
+                  filename: { type: string }
+        '400': { description: Invalid request or unsupported image }
+        '401': { description: Missing or invalid bearer token }
+        '413': { description: Request too large }
+        '502': { description: GitHub API or commit failure }
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+  schemas:
+    ArchiveImageRequest:
+      type: object
+      required: [title, document, image_base64, mime_type]
+      properties:
+        title: { type: string, maxLength: 200 }
+        document: { type: string, description: Existing repository-relative Markdown path }
+        source: { type: string, maxLength: 500 }
+        status:
+          type: string
+          enum: [Draft, Reviewed, Approved]
+          default: Draft
+        filename: { type: string, description: Simple filename with supported extension }
+        mime_type:
+          type: string
+          enum: [image/png, image/jpeg, image/webp, image/gif, image/svg+xml]
+        image_base64:
+          type: string
+          contentEncoding: base64
+          description: Actual image bytes encoded as standard Base64, without data URI prefix.
