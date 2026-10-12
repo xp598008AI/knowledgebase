@@ -68,7 +68,10 @@ def main() -> int:
         print("\n".join(f"  - {item}" for item in broken))
         return 1
     print("\nPASS: all local Markdown image references resolve to existing files.")
-    return 0
+    # The existing GitHub Actions workflow invokes this script, so run the
+    # repository-wide Markdown link check here without needing workflow edits.
+    from check_markdown_links import main as check_markdown_links
+    return check_markdown_links()
 
 if __name__ == "__main__":
     sys.exit(main())
