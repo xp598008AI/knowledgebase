@@ -114,23 +114,42 @@
 - 真实测试波形与 AI 概念图必须区分，不得将生成图冒充实测证据。
 - 对重要图片建议记录来源、日期、适用版本、审核人/状态。
 
-## 10. 减少手动操作：本地一条命令导入图片
+## 10. 减少手动操作：本地导入或 GitHub 自动归档
 
-仓库提供 `scripts/import_knowledge_image.py`。在已克隆的本地仓库中运行，可自动复制图片到目标文档同级的 `images/` 目录，并把相对路径引用和图示说明插入 Markdown。
+### 10.1 本地命令
 
-```bash
-python scripts/import_knowledge_image.py "/path/to/aspice-mindmap.png" "04-process/ASPICE.md" --title "ASPICE 全流程思维导图"
-```
-
-如需同时在本地创建 Git 提交，可追加 `--commit`：
+在已克隆的本地仓库中运行：
 
 ```bash
-python scripts/import_knowledge_image.py "/path/to/aspice-mindmap.png" "04-process/ASPICE.md" --title "ASPICE 全流程思维导图" --commit
-git push
+python scripts/import_knowledge_image.py "/path/to/aspice-mindmap.png" "03-工程开发方法/ASPICE/README.md" --title "ASPICE 全流程思维导图"
 ```
 
-说明：
-- 脚本不会覆盖同名图片；如文件名冲突，请使用 `--filename` 指定新名称。
-- 脚本会修改本地克隆中的文件，不会自行推送到 GitHub；推送前请检查变更。
-- 适合用户保存图片后一次命令完成归档与插图。ChatGPT 生成图片若无法提供本地文件本体，仍需先通过界面保存或其他方式取得图片文件。
-- 图片上传并推送后，GitHub Actions 会自动检查 Markdown 本地图片引用是否断链。
+如需同时在本地创建 Git 提交，可追加 `--commit`，检查后再推送。
+
+### 10.2 GitHub 自动归档
+
+将图片文件和同名 JSON 元数据一起提交到：
+
+`06-创新、扩展与职业竞争/技术图片资产库/待归档/`
+
+JSON 最少包含：
+
+```json
+{
+  "title": "EVCC 系统架构概念图",
+  "document": "04-充电系统与产品/EVCC/README.md",
+  "source": "AI-generated concept illustration",
+  "status": "Draft"
+}
+```
+
+推送后，`.github/workflows/auto-archive-technical-images.yml` 会自动验证队列、将图片移入目标 Markdown 同级的 `images/`、插入图片引用和说明、更新技术图片资产索引，并提交归档结果。也可以在 GitHub Actions 页面手动运行该工作流。
+
+限制：目标 Markdown 必须已经存在；支持 PNG、JPG/JPEG、WEBP、GIF、SVG；单张图片最大 20 MiB；不覆盖同名目标文件。每张图片都必须有同名 JSON 元数据，且 `document` 路径必须在仓库内。
+
+### 10.3 验收与安全
+
+- 图片/链接检查工作流必须通过。
+- 检查图片是否正常渲染、文字与单位是否正确。
+- AI 生成图默认标记为 Draft/概念示意，不得冒充标准原图或实测证据。
+- 不提交密码、令牌、客户信息或未获授权披露的资料。
