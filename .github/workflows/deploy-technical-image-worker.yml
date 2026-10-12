@@ -1,0 +1,56 @@
+name: Deploy technical image ingestion Worker
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-technical-image-worker
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Check Worker syntax
+        run: node --check cloudflare/technical-image-ingest/src/index.js
+
+      - name: Install Wrangler
+        run: npm install --global wrangler
+
+      - name: Deploy Worker
+        working-directory: cloudflare/technical-image-ingest
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: wrangler deploy
+
+      - name: Configure GitHub repository token as Worker secret
+        working-directory: cloudflare/technical-image-ingest
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          WORKER_GH_TOKEN: ${{ secrets.KB_GH_TOKEN }}
+        run: |
+          test -n "$WORKER_GH_TOKEN"
+          printf '%s' "$WORKER_GH_TOKEN" | wrangler secret put GH_TOKEN
+
+      - name: Configure ingestion token as Worker secret
+        working-directory: cloudflare/technical-image-ingest
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          WORKER_INGEST_TOKEN: ${{ secrets.KB_INGEST_TOKEN }}
+        run: |
+          test -n "$WORKER_INGEST_TOKEN"
+          printf '%s' "$WORKER_INGEST_TOKEN" | wrangler secret put INGEST_TOKEN
