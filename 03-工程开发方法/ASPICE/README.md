@@ -4,6 +4,7 @@
 
 ## 核心资料
 
+- [ASPICE 4.0 全流程总览](ASPICE4.0全流程总览.md)：从全局理解 Primary / Supporting / Organizational 三类过程、SYS/SWE/HWE/MLE 工程域、VAL.1、SPL.2，以及 MAN/SUP/PIM/REU 的治理与反馈闭环。
 - [ASPICE 流程实践指南](ASPICE流程实践指南.md)：端到端流程、过程组、追溯、能力等级和项目实施节奏。
 - [SYS / SWE 过程实践手册](ASPICE过程实践手册_SYS-SWE.md)：需求获取、系统需求、系统架构、软件需求/架构/详细设计、单元/集成/软件验证，以及 EVCC 超时功能案例。
 - [SUP / MAN 过程实践手册](ASPICE过程实践手册_SUP-MAN.md)：项目计划、风险、质量保证、配置管理、问题解决、变更管理与发布控制。
@@ -15,14 +16,35 @@
 - [评审证据记录模板](templates/ASPICE评审证据记录模板.md)：记录检查结果、发现项、关闭证据与评审结论。
 - [EVCC 通信超时端到端示范](examples/EVCC通信超时功能示范/README.md)：把系统/软件需求、状态机、测试追溯、缺陷变更与基线串成一个可实践案例。
 - [EVCC 项目 ASPICE 实施总控表](EVCC项目ASPICE实施总控表.md)：项目阶段、工作产品、RACI、里程碑准入/退出条件、风险、变更与证据导航的统一入口。
-- [ASPICE 开发 V 模型示意图](images/aspice-v-model.svg)
-- [ASPICE 工程闭环总览图](images/aspice-engineering-loop.svg)
 
 ## 图示
 
+### 1. ASPICE 4.0 全流程总览
+
+![Automotive SPICE 4.0 全流程总览](images/aspice-4.0-full-process-overview.svg)
+
+用于先建立“全局地图”：过程类别、工程域分流、验证/确认、发布、管理、支持、改进与复用之间如何关联。
+
+### 2. SYS / SWE 开发 V 模型
+
 ![ASPICE 开发 V 模型示意图](images/aspice-v-model.svg)
 
+用于理解 SYS / SWE 开发侧与验证侧的层级对应关系，不把 V 模型误认为 ASPICE 的全部。
+
+### 3. 工程证据闭环
+
 ![ASPICE 工程闭环总览图](images/aspice-engineering-loop.svg)
+
+用于理解需求、设计、实现、测试、缺陷、变更和基线之间的双向追溯。
+
+## 推荐学习顺序
+
+1. **先看全流程总览**：理解 Automotive SPICE 4.0 的三类过程和完整过程地图。
+2. **再看 V 模型**：掌握 SYS / SWE 的需求—设计—实现—验证对应关系。
+3. **再看工程闭环**：掌握需求、设计、代码、测试、缺陷、变更、基线如何形成证据链。
+4. **进入过程实践手册**：逐个理解 SYS / SWE / MAN / SUP 的目的、活动、工作产品和客观证据。
+5. **用 EVCC 案例落地**：把过程要求映射到真实充电控制器项目。
+6. **用总控表和模板执行**：把过程范围、RACI、里程碑、风险、变更、评审和证据位置统一管理。
 
 ## 实践路线
 
