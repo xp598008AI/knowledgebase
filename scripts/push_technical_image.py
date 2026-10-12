@@ -20,6 +20,7 @@ import re
 import sys
 import time
 import urllib.error
+import urllib.parse
 import urllib.request
 from pathlib import Path, PurePosixPath
 
@@ -89,7 +90,6 @@ def main() -> int:
     try:
         # Confirm target Markdown exists before creating any objects.
         encoded_doc_path = "/".join(urllib.parse.quote(part, safe="") for part in document.parts)
-        import urllib.parse
         doc_url = f"{API}/contents/{encoded_doc_path}?ref={urllib.parse.quote(args.branch, safe='')}"
         request_json(doc_url, token)
 
