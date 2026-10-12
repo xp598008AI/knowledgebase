@@ -30,7 +30,7 @@ jobs:
         with:
           python-version: '3.x'
       - name: Compile-check image upload bridge
-        run: python -m py_compile scripts/push_technical_image.py scripts/auto_archive_technical_images.py
+        run: python -c "import ast,pathlib; files=list(map(pathlib.Path, ('scripts/push_technical_image.py', 'scripts/auto_archive_technical_images.py', 'scripts/check_image_refs.py', 'scripts/check_markdown_links.py'))); [ast.parse(p.read_text(encoding='utf-8'), filename=str(p)) for p in files]; print('Syntax OK:', len(files), 'Python scripts')"
       - name: Validate staged images
         run: python scripts/auto_archive_technical_images.py
       - name: Archive images and update Markdown
