@@ -18,6 +18,13 @@
 - [来源登记](来源登记/SOURCES.md)
 - [技术图片资产库](../../06-创新、扩展与职业竞争/技术图片资产库/README.md)
 
+## 技术图片示例
+- [ASPICE 开发 V 模型示意图](../ASPICE/images/aspice-v-model.svg) — SVG 源码直写示例
+- [ASPICE 过程思维导图（历史资料）](../ASPICE/历史资料/images/aspice-process-mindmap.svg)
+- [技术图片自动归档工作流图](images/technical-image-archive-workflow.svg)
+- [DC V2H 系统架构图](../../04-充电系统与产品/充电系统/协议与时序/images/dc-v2h-architecture.png)
+- [DC V2H 充放电时序图](../../04-充电系统与产品/充电系统/协议与时序/images/dc-v2h-sequence.png)
+
 ## 模板与自动化
 - [技术知识卡片模板](../../templates/技术知识卡片模板.md)
 - [图文技术文档与图片归档流水线指南](../../templates/IMAGE_DOCUMENT_GUIDE.md)
@@ -31,4 +38,4 @@
 - 每篇文档只设置一个主归属，跨主题通过链接关联。
 - 保留来源、版本、假设、验证证据和审核状态。
 - 标准与功能安全结论必须核对适用的正式版本。
-- 技术图片尽量与目标文档同目录归档；跨文档复用的素材放入技术图片资产库。
+- 技术图片优先使用 SVG 源码直写；图片应与目标文档同目录归档，跨文档复用的素材放入技术图片资产库。
