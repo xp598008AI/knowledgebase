@@ -15,7 +15,7 @@
 | LES-001 | 工程经验 | [经验索引](../09-lessons/LESSONS_INDEX.md) | 已建立入口，待录入实际案例 |
 
 ## 模板与图文规范
-- [图文技术文档与图片归档流水线规范](../99-templates/IMAGE_DOCUMENT_GUIDE.md)
+- [图文技术文档与图片归档流水线规范](../99-templates/IMAGE_DOCUMENT_GUIDE.md)（含一键导入脚本）
 - [技术知识卡片](../templates/KNOWLEDGE.md)
 - [测试报告](../templates/TEST_REPORT.md)
 - [失效分析](../templates/FAILURE_ANALYSIS.md)
