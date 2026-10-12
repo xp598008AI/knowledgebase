@@ -16,7 +16,7 @@ def clean_target(raw: str) -> str:
 
 def strip_fenced_code(text: str) -> str:
     """Ignore examples inside fenced Markdown code blocks."""
-    return re.sub(r"(?ms)^```[^\\n]*\\n.*?^```[ \\t]*$", "", text)
+    return re.sub(r"(?ms)^```[^\n]*\n.*?^```[ \t]*$", "", text)
 
 def main() -> int:
     markdown_files = [p for p in ROOT.rglob("*.md")
