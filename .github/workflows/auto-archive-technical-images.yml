@@ -7,7 +7,6 @@ on:
       - '06-创新、扩展与职业竞争/技术图片资产库/待归档/**'
       - '.github/workflows/auto-archive-technical-images.yml'
       - 'scripts/auto_archive_technical_images.py'
-      - 'cloudflare/technical-image-ingest/**'
   workflow_dispatch:
 
 permissions:
@@ -32,8 +31,6 @@ jobs:
           python-version: '3.x'
       - name: Compile-check image upload bridge
         run: python -m py_compile scripts/push_technical_image.py scripts/auto_archive_technical_images.py
-      - name: Syntax-check cloud ingestion Worker
-        run: node --check cloudflare/technical-image-ingest/src/index.js
       - name: Validate staged images
         run: python scripts/auto_archive_technical_images.py
       - name: Archive images and update Markdown
