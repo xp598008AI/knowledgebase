@@ -30,7 +30,7 @@ def main() -> int:
         text = strip_fenced_code(text)
         # Ignore inline-code examples such as `![diagram](images/example.svg)`;
         # these document Markdown syntax and are not actual asset references.
-        text = re.sub(r"(?<!`)`+[^`\\n]*`+(?!`)", "", text)
+        text = re.sub(r"(?<!`)`+[^`\n]*`+(?!`)", "", text)
         targets = IMAGE_LINK.findall(text) + HTML_IMG.findall(text)
         for raw in targets:
             target = clean_target(raw)
