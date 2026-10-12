@@ -2,8 +2,8 @@
 
 本目录聚焦尚在持续评估或快速演进的产品方向。内容应区分已验证事实、市场判断和个人假设。
 
-- [储能](energy-storage/README.md)
-- [AIDC 供电](aidc/README.md)
-- [固态变压器 SST](sst/README.md)
+- [储能](储能/README.md)
+- [AIDC 供电](AIDC/README.md)
+- [固态变压器 SST](SST/README.md)
 
 每篇研究建议包含：应用场景、系统架构、关键技术、主要供应链/厂商、标准与安全要求、工程难点、市场证据、待验证假设及来源日期。
