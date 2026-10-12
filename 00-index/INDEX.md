@@ -20,6 +20,16 @@
 - [测试报告](../templates/TEST_REPORT.md)
 - [失效分析](../templates/FAILURE_ANALYSIS.md)
 
+## 分类与新增主题入口
+
+- [知识分类与目录规划](../00-index/知识分类与目录规划.md)
+- [AI 协作与自动归档规范](../00-index/AI协作与自动归档规范.md)
+- [技术图片资产规范](../00-index/技术图片资产规范.md)
+- [技术图片资产库](../11-visual-assets/README.md)
+- [前沿产品与潜在方向：储能 / AIDC / SST](../12-frontier/README.md)
+- [工具与自动化](../13-tools-automation/README.md)
+- [技术情报与职业能力](../14-tech-intelligence-career/README.md)
+
 ## 待办事项
 - [ ] 导入第一批经授权的个人技术笔记
 - [ ] 为重要 PDF 建立 Markdown 摘要和页码索引
