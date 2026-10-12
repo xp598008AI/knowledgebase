@@ -26,6 +26,8 @@ ASPICE（Automotive SPICE）是汽车行业用于评价和改进开发过程能�
 
 ![ASPICE V 模型](images/aspice-v-model.svg)
 
+![ASPICE 工程闭环总览](images/aspice-engineering-loop.svg)
+
 下面是面向工程实践的简化主流程。左侧主要做分解与设计，右侧用相应层级的验证活动检查结果；每一层都要考虑需求覆盖、接口一致性、缺陷闭环和变更影响。
 
 ```mermaid
