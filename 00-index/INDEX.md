@@ -7,7 +7,7 @@
 | CHG-001 | 充电系统 | [EVCC 与充电系统](../01-charging/EVCC.md) | 已建立工程初稿，待项目化 |
 | PRO-001 | 通信协议 | [ISO 15118](../02-protocols/ISO15118.md) | 已建立工程初稿，标准条款待核实 |
 | SW-001 | 软件架构 | [AUTOSAR](../03-software/AUTOSAR.md) | 已建立工程初稿，待项目化 |
-| ASP-001 | ASPICE | [ASPICE](../04-process/ASPICE.md) | 已建立工程初稿，适用版本待确认 |
+| ASP-001 | ASPICE | [ASPICE 流程详解与工程实践](../04-process/ASPICE.md) | 已扩展：过程主线、SYS/SWE/SUP/MAN、V 模型、追溯、CL0–CL5、评估清单 |
 | SAF-001 | 功能安全与失效分析 | [FMEA](../05-safety/FMEA.md) | 已建立工程初稿，不构成安全论证 |
 | HW-001 | 硬件设计 | [功率电子](../06-hardware/POWER_ELECTRONICS.md) | 已建立工程初稿，参数需实测/数据手册验证 |
 | TST-001 | 测试验证 | [测试索引](../07-verification/TEST_INDEX.md) | 已建立测试归档与验证框架 |
@@ -35,3 +35,4 @@
 | 2026-10-12 | 初始化知识库索引 | Draft |
 | 2026-10-12 | 补充充电、ISO 15118、AUTOSAR、ASPICE、功能安全、硬件与测试初稿 | Draft |
 | 2026-10-12 | 增加图文技术文档规范及 ISO 15118 图片目录说明 | Draft |
+| 2026-10-12 | 扩展 ASPICE 文档：流程阶段、过程编号、V 模型、双向追溯、能力等级、自查清单及与功能安全/FMEA 的关系 | Draft |
