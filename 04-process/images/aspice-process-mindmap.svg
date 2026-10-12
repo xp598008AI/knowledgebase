@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900" role="img" aria-labelledby="title desc">
+<title id="title">ASPICE 汽车软件开发过程思维导图</title>
+<desc id="desc">围绕 ASPICE 的过程类别、V 模型、追溯机制、能力等级、项目落地和质量支撑活动的中文思维导图。</desc>
+<defs>
+  <style>
+    .bg{fill:#f7f9fc}.title{font:700 34px 'Noto Sans CJK SC','Microsoft YaHei',sans-serif;fill:#172b4d}
+    .sub{font:18px 'Noto Sans CJK SC','Microsoft YaHei',sans-serif;fill:#526581}
+    .head{font:700 22px 'Noto Sans CJK SC','Microsoft YaHei',sans-serif;fill:#fff}
+    .body{font:17px 'Noto Sans CJK SC','Microsoft YaHei',sans-serif;fill:#21324b}
+    .small{font:15px 'Noto Sans CJK SC','Microsoft YaHei',sans-serif;fill:#526581}
+    .line{fill:none;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+    .card{stroke-width:2;rx:20}
+  </style>
+  <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#23395d" flood-opacity=".12"/></filter>
+</defs>
+<rect class="bg" width="1400" height="900"/>
+<text class="title" x="700" y="54" text-anchor="middle">ASPICE 汽车软件开发过程｜工程思维导图</text>
+<text class="sub" x="700" y="84" text-anchor="middle">核心：需求 → 设计 → 实现 → 验证，以追溯、配置和客观证据形成闭环</text>
+<path class="line" stroke="#4776c5" d="M700 430 V155 H360 V185 M700 155 H1040 V185 M700 430 V390 H360 V420 M700 390 H1040 V420 M700 430 V650 H360 V675 M700 650 H1040 V675"/>
+<path class="line" stroke="#4776c5" d="M700 430 V500"/>
+<rect x="525" y="370" width="350" height="120" rx="28" fill="#203f73" filter="url(#shadow)"/>
+<text x="700" y="415" class="head" text-anchor="middle" style="font-size:30px">ASPICE</text>
+<text x="700" y="449" class="head" text-anchor="middle">过程评估与改进</text>
+<text x="700" y="474" text-anchor="middle" style="font:15px sans-serif;fill:#dbe8ff">不是文档堆积，而是过程有效且证据可审查</text>
+
+<g filter="url(#shadow)">
+<rect class="card" x="55" y="120" width="510" height="230" fill="#eaf2ff" stroke="#4776c5"/>
+<rect x="55" y="120" width="510" height="48" rx="18" fill="#4776c5"/>
+<text class="head" x="82" y="152">① 过程类别与关键过程</text>
+<text class="body" x="82" y="204">系统工程：SYS.1–SYS.5</text>
+<text class="body" x="82" y="237">软件工程：SWE.1–SWE.6</text>
+<text class="body" x="82" y="270">支撑过程：SUP.1 / 8 / 9 / 10</text>
+<text class="body" x="82" y="303">管理过程：MAN.3 / 5 / 6 等</text>
+<text class="small" x="82" y="330">过程范围与名称以项目适用 PAM 版本为准</text>
+
+<rect class="card" x="835" y="120" width="510" height="230" fill="#e9f8f2" stroke="#21866b"/>
+<rect x="835" y="120" width="510" height="48" rx="18" fill="#21866b"/>
+<text class="head" x="862" y="152">② V 模型：设计与验证对应</text>
+<text class="body" x="862" y="204">SYS.2 系统需求 ↔ SYS.5 系统测试</text>
+<text class="body" x="862" y="237">SYS.3 系统架构 ↔ SYS.4 集成验证</text>
+<text class="body" x="862" y="270">SWE.1 软件需求 ↔ SWE.6 软件测试</text>
+<text class="body" x="862" y="303">SWE.2/3 架构与详细设计 ↔ SWE.5/4</text>
+<text class="small" x="862" y="330">活动可迭代并行，不要求严格瀑布式串行</text>
+
+<rect class="card" x="55" y="385" width="430" height="220" fill="#fff3e6" stroke="#cf7c26"/>
+<rect x="55" y="385" width="430" height="48" rx="18" fill="#cf7c26"/>
+<text class="head" x="82" y="417">③ 双向追溯与证据链</text>
+<text class="body" x="82" y="468">系统需求 → 软件需求 → 架构</text>
+<text class="body" x="82" y="501">→ 详细设计 → 实现 → 测试用例</text>
+<text class="body" x="82" y="534">→ 测试结果 → 缺陷与变更闭环</text>
+<text class="small" x="82" y="570">正向查覆盖；反向查依据；同时核对版本</text>
+
+<rect class="card" x="915" y="385" width="430" height="220" fill="#f2edff" stroke="#7a5ac8"/>
+<rect x="915" y="385" width="430" height="48" rx="18" fill="#7a5ac8"/>
+<text class="head" x="942" y="417">④ 能力等级 CL0–CL5</text>
+<text class="body" x="942" y="468">CL0 未完成　 CL1 已执行</text>
+<text class="body" x="942" y="501">CL2 受管理　 CL3 已建立</text>
+<text class="body" x="942" y="534">CL4 可预测　 CL5 持续创新</text>
+<text class="small" x="942" y="570">评定针对具体过程，必须基于正式证据</text>
+
+<rect class="card" x="55" y="640" width="510" height="205" fill="#e7f7fb" stroke="#2386a0"/>
+<rect x="55" y="640" width="510" height="48" rx="18" fill="#2386a0"/>
+<text class="head" x="82" y="672">⑤ 项目落地：以 EVCC 为例</text>
+<text class="body" x="82" y="724">计划与需求 → 系统/软件架构</text>
+<text class="body" x="82" y="757">→ 详细设计与编码 → 单元/集成测试</text>
+<text class="body" x="82" y="790">→ 软件合格性测试 → 系统验证与交付</text>
+<text class="small" x="82" y="820">每一步明确责任、输入、输出、评审和证据</text>
+
+<rect class="card" x="835" y="640" width="510" height="205" fill="#fff0f1" stroke="#c84b5b"/>
+<rect x="835" y="640" width="510" height="48" rx="18" fill="#c84b5b"/>
+<text class="head" x="862" y="672">⑥ 支撑机制与常见薄弱点</text>
+<text class="body" x="862" y="724">SUP.1 质量　 SUP.8 配置与基线</text>
+<text class="body" x="862" y="757">SUP.9 问题闭环　 SUP.10 变更管理</text>
+<text class="body" x="862" y="790">需求漏测、证据不足、版本不一致需整改</text>
+<text class="small" x="862" y="820">与 ISO 26262 / FMEA 可协同，但不能互相替代</text>
+</g>
+<text x="700" y="878" text-anchor="middle" class="small">学习示意图｜正式评估前核对适用版本的 ASPICE PAM 与客户要求</text>
+</svg>
