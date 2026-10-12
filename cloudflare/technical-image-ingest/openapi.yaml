@@ -10,7 +10,7 @@ paths:
     post:
       operationId: archiveTechnicalImage
       summary: Archive a generated technical image
-      description: Call only when the user explicitly asks to archive the image. image_base64 must be actual standard Base64 image bytes, not a URL, Markdown, or data URI. Never fabricate image bytes.
+      description: In this configured custom GPT, call after each newly generated technical image unless the user opts out. image_base64 must be actual standard Base64 image bytes, not a URL, Markdown, or data URI. Never fabricate image bytes.
       security:
         - BearerAuth: []
       requestBody:
