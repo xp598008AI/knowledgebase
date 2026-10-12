@@ -110,3 +110,24 @@
 - AI 生成的技术图应标注“概念示意图”；标准字段、引脚、时序、安全要求必须对照正式资料复核。
 - 真实测试波形与 AI 概念图必须区分，不得将生成图冒充实测证据。
 - 对重要图片建议记录来源、日期、适用版本、审核人/状态。
+
+## 10. 减少手动操作：本地一条命令导入图片
+
+仓库提供 `scripts/import_knowledge_image.py`。在已克隆的本地仓库中运行，可自动复制图片到目标文档同级的 `images/` 目录，并把相对路径引用和图示说明插入 Markdown。
+
+```bash
+python scripts/import_knowledge_image.py "/path/to/aspice-mindmap.png" "04-process/ASPICE.md" --title "ASPICE 全流程思维导图"
+```
+
+如需同时在本地创建 Git 提交，可追加 `--commit`：
+
+```bash
+python scripts/import_knowledge_image.py "/path/to/aspice-mindmap.png" "04-process/ASPICE.md" --title "ASPICE 全流程思维导图" --commit
+git push
+```
+
+说明：
+- 脚本不会覆盖同名图片；如文件名冲突，请使用 `--filename` 指定新名称。
+- 脚本会修改本地克隆中的文件，不会自行推送到 GitHub；推送前请检查变更。
+- 适合用户保存图片后一次命令完成归档与插图。ChatGPT 生成图片若无法提供本地文件本体，仍需先通过界面保存或其他方式取得图片文件。
+- 图片上传并推送后，GitHub Actions 会自动检查 Markdown 本地图片引用是否断链。
