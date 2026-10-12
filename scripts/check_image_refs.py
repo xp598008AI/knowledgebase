@@ -14,6 +14,10 @@ def clean_target(raw: str) -> str:
     target = raw.strip().split()[0].strip("<>")
     return unquote(target)
 
+def strip_fenced_code(text: str) -> str:
+    """Ignore examples inside fenced Markdown code blocks."""
+    return re.sub(r"(?ms)^```[^\\n]*\\n.*?^```[ \\t]*$", "", text)
+
 def main() -> int:
     markdown_files = [p for p in ROOT.rglob("*.md")
                       if ".git" not in p.parts and ".venv" not in p.parts]
@@ -23,6 +27,7 @@ def main() -> int:
 
     for md in markdown_files:
         text = md.read_text(encoding="utf-8", errors="replace")
+        text = strip_fenced_code(text)
         targets = IMAGE_LINK.findall(text) + HTML_IMG.findall(text)
         for raw in targets:
             target = clean_target(raw)
