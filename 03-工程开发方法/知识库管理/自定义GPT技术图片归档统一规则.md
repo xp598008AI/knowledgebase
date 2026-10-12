@@ -25,7 +25,7 @@
 
 Markdown 使用相对路径引用：
 
-    ![ISO 15118-20 DC V2H 系统与通信协同示意图](images/iso15118-dc-v2h-workflow.svg)
+图片引用写法：使用标准 Markdown 图片语法，将目标文件名写成相对于该文档的 images/文件名.svg 路径；此处仅说明规则，不引用实际资产。
 
 ### 2.2 跨主题复用图片
 
