@@ -21,6 +21,10 @@ def clean_target(raw: str) -> str:
     target = re.split(r'\s+(?=["\'])', target, maxsplit=1)[0]
     return unquote(target)
 
+def strip_fenced_code(text: str) -> str:
+    """Ignore link examples inside fenced Markdown code blocks."""
+    return re.sub(r"(?ms)^```[^\\n]*\\n.*?^```[ \\t]*$", "", text)
+
 def main() -> int:
     markdown_files = sorted(p for p in ROOT.rglob("*.md")
                             if ".git" not in p.parts and ".venv" not in p.parts)
@@ -28,7 +32,7 @@ def main() -> int:
     checked = 0
     for md in markdown_files:
         try:
-            content = md.read_text(encoding="utf-8")
+            content = strip_fenced_code(md.read_text(encoding="utf-8"))
         except (OSError, UnicodeError) as exc:
             broken.append(f"{md.relative_to(ROOT)} -> cannot read Markdown: {exc}")
             continue
