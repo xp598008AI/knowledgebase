@@ -63,8 +63,8 @@ def main() -> int:
         destination.unlink()
         parser.error("the same image reference already exists in the document; no changes made")
     block = f"\n\n## 图片资料\n\n{reference}\n\n**图示说明：** {args.title}。请核对图中文字、单位、信号方向和适用标准版本；AI 生成图应作为概念示意，不替代正式标准或实测证据。\n"
-    if re.search(r"^## 图片资料\\s*$", markdown, flags=re.MULTILINE):
-        markdown = re.sub(r"(^## 图片资料\\s*$)", r"\\1" + f"\n\n{reference}\n\n**图示说明：** {args.title}。请核对图中文字、单位、信号方向和适用标准版本；AI 生成图应作为概念示意，不替代正式标准或实测证据。", markdown, count=1, flags=re.MULTILINE)
+    if re.search(r"^## 图片资料\s*$", markdown, flags=re.MULTILINE):
+        markdown = re.sub(r"(^## 图片资料\s*$)", r"\1" + f"\n\n{reference}\n\n**图示说明：** {args.title}。请核对图中文字、单位、信号方向和适用标准版本；AI 生成图应作为概念示意，不替代正式标准或实测证据。", markdown, count=1, flags=re.MULTILINE)
     else:
         markdown = markdown.rstrip() + block
     document.write_text(markdown, encoding="utf-8")
