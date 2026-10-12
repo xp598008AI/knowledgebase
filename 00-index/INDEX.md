@@ -14,7 +14,8 @@
 | PAT-001 | 专利创新 | [专利索引](../08-patents/PATENT_INDEX.md) | 已建立入口，待录入具体构思 |
 | LES-001 | 工程经验 | [经验索引](../09-lessons/LESSONS_INDEX.md) | 已建立入口，待录入实际案例 |
 
-## 模板
+## 模板与图文规范
+- [图文技术文档制作规范](../99-templates/IMAGE_DOCUMENT_GUIDE.md)
 - [技术知识卡片](../templates/KNOWLEDGE.md)
 - [测试报告](../templates/TEST_REPORT.md)
 - [失效分析](../templates/FAILURE_ANALYSIS.md)
@@ -33,3 +34,4 @@
 |---|---|---|
 | 2026-10-12 | 初始化知识库索引 | Draft |
 | 2026-10-12 | 补充充电、ISO 15118、AUTOSAR、ASPICE、功能安全、硬件与测试初稿 | Draft |
+| 2026-10-12 | 增加图文技术文档规范及 ISO 15118 图片目录说明 | Draft |
