@@ -12,7 +12,7 @@
 - [AI 协作与自动归档规范](AI协作与自动归档规范.md)
 - [ChatGPT 图片上传与自动归档快速指南](ChatGPT图片直传指南.md)
 - [自定义 GPT GitHub 直连图片归档配置](自定义GPT_GitHub直连图片归档配置.md)
-- [GitHub 直连图片归档 GPT Action Schema](GitHub直连图片归档Action.openapi.yaml)
+- [技术图片 SVG 源码直写与自动插入方法](自定义GPT_GitHub直连图片归档配置.md)
 - [技术图片资产规范](技术图片资产规范.md)
 - [知识分类与目录规划](知识分类与目录规划.md)
 - [来源登记](来源登记/SOURCES.md)
