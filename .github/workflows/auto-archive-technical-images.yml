@@ -1,0 +1,46 @@
+name: Auto-archive technical images
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '06-创新、扩展与职业竞争/技术图片资产库/待归档/**'
+      - '.github/workflows/auto-archive-technical-images.yml'
+      - 'scripts/auto_archive_technical_images.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: auto-archive-technical-images
+  cancel-in-progress: false
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Validate staged images
+        run: python scripts/auto_archive_technical_images.py
+      - name: Archive images and update Markdown
+        run: python scripts/auto_archive_technical_images.py --apply
+      - name: Commit archive results
+        run: |
+          if git diff --quiet; then
+            echo "No archive changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "docs: automatically archive technical images"
+          git push
