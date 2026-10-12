@@ -9,6 +9,7 @@
 - [SUP / MAN 过程实践手册](ASPICE过程实践手册_SUP-MAN.md)：项目计划、风险、质量保证、配置管理、问题解决、变更管理与发布控制。
 - [需求追溯矩阵模板](templates/ASPICE需求追溯矩阵模板.md)：从利益相关方需求到设计、实现、测试和缺陷的双向追溯。
 - [工程评审检查表模板](templates/ASPICE评审检查表.md)：需求、架构、实现、测试和发现项关闭的检查项。
+- [EVCC 通信超时端到端示范](examples/EVCC通信超时功能示范/README.md)：把系统/软件需求、状态机、测试追溯、缺陷变更与基线串成一个可实践案例。
 - [ASPICE 开发 V 模型示意图](images/aspice-v-model.svg)
 - [ASPICE 工程闭环总览图](images/aspice-engineering-loop.svg)
 
