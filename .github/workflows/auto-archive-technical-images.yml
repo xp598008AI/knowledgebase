@@ -33,6 +33,8 @@ jobs:
         run: python scripts/auto_archive_technical_images.py
       - name: Archive images and update Markdown
         run: python scripts/auto_archive_technical_images.py --apply
+      - name: Validate archived images and Markdown links
+        run: python scripts/check_image_refs.py
       - name: Commit archive results
         run: |
           if git diff --quiet; then
