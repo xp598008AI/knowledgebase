@@ -10,7 +10,7 @@
 
 ## 核心文档
 - [AI 协作与自动归档规范](AI协作与自动归档规范.md)
-- [ChatGPT 图片上传与自动归档快速指南](ChatGPT图片直传指南.md)
+- [ChatGPT 图片上传与自动归档快速指南](ChatGPT图片直传指南.md)\n- [自定义 GPT 云端图片归档配置](自定义GPT云端图片归档配置.md)\n- [云端图片接收 Worker 源码](../../cloudflare/technical-image-ingest/README.md)
 - [技术图片资产规范](技术图片资产规范.md)
 - [知识分类与目录规划](知识分类与目录规划.md)
 - [来源登记](来源登记/SOURCES.md)
