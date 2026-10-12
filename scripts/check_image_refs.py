@@ -28,6 +28,9 @@ def main() -> int:
     for md in markdown_files:
         text = md.read_text(encoding="utf-8", errors="replace")
         text = strip_fenced_code(text)
+        # Ignore inline-code examples such as `![diagram](images/example.svg)`;
+        # these document Markdown syntax and are not actual asset references.
+        text = re.sub(r"(?<!`)`+[^`\\n]*`+(?!`)", "", text)
         targets = IMAGE_LINK.findall(text) + HTML_IMG.findall(text)
         for raw in targets:
             target = clean_target(raw)
