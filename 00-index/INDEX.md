@@ -15,7 +15,7 @@
 | LES-001 | 工程经验 | [经验索引](../09-lessons/LESSONS_INDEX.md) | 已建立入口，待录入实际案例 |
 
 ## 模板与图文规范
-- [图文技术文档制作规范](../99-templates/IMAGE_DOCUMENT_GUIDE.md)
+- [图文技术文档与图片归档流水线规范](../99-templates/IMAGE_DOCUMENT_GUIDE.md)
 - [技术知识卡片](../templates/KNOWLEDGE.md)
 - [测试报告](../templates/TEST_REPORT.md)
 - [失效分析](../templates/FAILURE_ANALYSIS.md)
@@ -36,3 +36,4 @@
 | 2026-10-12 | 补充充电、ISO 15118、AUTOSAR、ASPICE、功能安全、硬件与测试初稿 | Draft |
 | 2026-10-12 | 增加图文技术文档规范及 ISO 15118 图片目录说明 | Draft |
 | 2026-10-12 | 扩展 ASPICE 文档：流程阶段、过程编号、V 模型、双向追溯、能力等级、自查清单及与功能安全/FMEA 的关系 | Draft |
+| 2026-10-12 | 建立全库图片归档规范及 GitHub Actions 图片引用检查流水线 | Draft |
