@@ -10,4 +10,4 @@
 - 回归验证结果
 - 预防机制与相关知识链接
 
-模板：[失效分析模板](../templates/FAILURE_ANALYSIS.md)
+模板：[失效分析模板](../../../templates/FAILURE_ANALYSIS.md)
