@@ -20,6 +20,9 @@
 - [来源登记](来源登记/SOURCES.md)
 - [技术图片资产库](../06-创新、扩展与职业竞争/技术图片资产库/README.md)
 
+## 工程实践指南
+- [ASPICE工程实践指南](../03-工程开发方法/ASPICE/ASPICE工程实践指南.md)：4.1框架参考、过程输入输出、流转闭环与EVCC示例；Draft。
+
 ## 技术图片示例
 - [技术图片自动归档工作流图](images/technical-image-archive-workflow.svg)
 - [DC V2H 系统架构图](../04-充电系统与产品/充电系统/协议与时序/images/dc-v2h-architecture.png)

@@ -10,7 +10,13 @@
 - 工作产品、评审证据与双向追溯。
 - EVCC 项目实践、示例和模板。
 
-当前仅建立本 README；后续资料按主题逐步补充，涉及标准要求时明确版本与来源。
+## 当前指南
+
+- [ASPICE工程实践指南](ASPICE工程实践指南.md)：总览图、32个过程的输入输出、关系与流转、阶段门、EVCC示例和发布检查清单。
+- 框架参考：Automotive SPICE 4.1（2026-08-24）；状态：Draft。文件名、门禁和示例参数属于工程建议。
+- [工程总览图](images/aspice-engineering-overview-v41.svg) · [工作产品流转图](images/aspice-work-product-loop-v1.svg)
+
+资料按主题逐步补充，涉及标准要求时明确版本与来源。
 
 ## 历史资料
 

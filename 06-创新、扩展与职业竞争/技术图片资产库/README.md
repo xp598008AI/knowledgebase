@@ -33,3 +33,7 @@
 ## 自动归档记录
 - [技术图片自动归档流水线示意图](../../知识库管理/AI协作与自动归档规范.md) · [图片文件](../../知识库管理/images/technical-image-archive-workflow.svg) · 状态：Draft · 来源：Repository workflow validation example
 - [ISO 15118-20 DC V2H 系统与通信协同示意图](../../04-充电系统与产品/充电系统/协议与时序/ISO15118.md) · [图片文件](../../04-充电系统与产品/充电系统/协议与时序/images/iso15118-dc-v2h-workflow.svg) · 状态：Draft · 来源：AI-generated conceptual engineering diagram; verify against the applicable ISO 15118-20 edition and system design
+
+## SVG直写归档记录
+
+- [ASPICE工程实践指南](../../03-工程开发方法/ASPICE/ASPICE工程实践指南.md) · [工程总览图](../../03-工程开发方法/ASPICE/images/aspice-engineering-overview-v41.svg) · [工作产品流转图](../../03-工程开发方法/ASPICE/images/aspice-work-product-loop-v1.svg) · v1 / 2026-10-13 / Draft · 来源：AI辅助原创工程概念图；直写归档，非队列自动归档。

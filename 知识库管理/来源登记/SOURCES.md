@@ -14,3 +14,9 @@
 
 ## 注意
 私有仓库不等于资料已获授权。对公司机密、客户资料、未公开专利、量产缺陷数据等内容，未获得明确许可前不要上传或发送给个人 AI 服务。
+
+## 本次工程指南参考来源
+
+| ID | 资料名称 | 来源/所有者 | 版本/日期 | 许可或授权状态 | 敏感级别 | 存储路径 | 审核状态 |
+|---|---|---|---|---|---|---|---|
+| SRC-ASPICE-41 | Automotive SPICE PRM/PAM | [VDA QMC官方发布](https://vda-qmc.de/en/automotive-spice/automotive-spice-veroeffentlichungen/) / [英文PDF](https://vda-qmc.de/wp-content/uploads/2026/09/Automotive-SPICE-PAM-v41.pdf) | 4.1 / 2026-08-24；核验2026-10-13；§3—5 | 仅记录链接，未复制/再分发PDF；原文版权归原权利人 | 公开 | [原创工程指南](../../03-工程开发方法/ASPICE/ASPICE工程实践指南.md) | Draft |
