@@ -37,3 +37,5 @@
 ## SVG直写归档记录
 
 - [ASPICE工程实践指南](../../03-工程开发方法/ASPICE/ASPICE工程实践指南.md) · [工程总览图](../../03-工程开发方法/ASPICE/images/aspice-engineering-overview-v41.svg) · [工作产品流转图](../../03-工程开发方法/ASPICE/images/aspice-work-product-loop-v1.svg) · v1 / 2026-10-13 / Draft · 来源：AI辅助原创工程概念图；直写归档，非队列自动归档。
+
+- [ASPICE全32过程输入输出、流转与评审图v2](../../03-工程开发方法/ASPICE/ASPICE工程实践指南.md) · [总图](../../03-工程开发方法/ASPICE/images/aspice-all-process-io-review-v2.svg) · 另含6张分区图（见正文） · 2026-10-13 / Draft · 来源：AI辅助原创SVG工程图；32个建议评审点；本地渲染已检查；直写归档。

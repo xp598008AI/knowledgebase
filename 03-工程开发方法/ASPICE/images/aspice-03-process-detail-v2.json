@@ -1,0 +1,11 @@
+{
+  "title": "硬件工程",
+  "document": "03-工程开发方法/ASPICE/ASPICE工程实践指南.md",
+  "source": "AI-assisted original engineering concept diagram; framework reference Automotive SPICE 4.1; not an official diagram",
+  "status": "Draft",
+  "filename": "aspice-03-process-detail-v2.svg",
+  "version": "v2",
+  "created": "2026-10-13",
+  "archive_mode": "svg-direct-write",
+  "review_markers": "R01-R32: recommended review/decision points; not completed approvals"
+}
