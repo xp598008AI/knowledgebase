@@ -20,3 +20,14 @@
 | ID | 资料名称 | 来源/所有者 | 版本/日期 | 许可或授权状态 | 敏感级别 | 存储路径 | 审核状态 |
 |---|---|---|---|---|---|---|---|
 | SRC-ASPICE-41 | Automotive SPICE PRM/PAM | [VDA QMC官方发布](https://vda-qmc.de/en/automotive-spice/automotive-spice-veroeffentlichungen/) / [英文PDF](https://vda-qmc.de/wp-content/uploads/2026/09/Automotive-SPICE-PAM-v41.pdf) | 4.1 / 2026-08-24；核验2026-10-13；§3—5 | 仅记录链接，未复制/再分发PDF；原文版权归原权利人 | 公开 | [原创工程指南](../../03-工程开发方法/ASPICE/ASPICE工程实践指南.md) | Draft |
+
+## 电力电子基础知识库参考来源
+
+仅登记官方链接，未导入或再分发原始文件；原创讲义与教学算例保持Draft。
+
+| ID | 资料 | 来源/版本 | 位置与用途 | 审核状态 |
+|---|---|---|---|---|
+| PE-S01 | Buck功率级计算 | TI SLVA477C / 2026-09，核验2026-10-14；§2/3/7 | [电力电子来源表](../../01-基础理论/电力电子/学习路线与参考资料.md)，CCM纹波/选型 | Draft |
+| PE-S02 | Boost功率级计算 | TI SLVA372 Rev. D，核验2026-10-14 | 同上，升压功率级参考 | Draft |
+| PE-S03 | 图腾柱PFC | TI TIDM-02008在线页，核验2026-10-14；未锁定设计修订 | 同上，结构与控制入口 | Draft |
+| PE-S04 | 双向DAB | TI TIDA-010054在线页，核验2026-10-14；未锁定设计修订 | 同上，双向隔离入口 | Draft |
