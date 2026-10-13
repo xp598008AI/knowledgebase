@@ -9,8 +9,8 @@
 已验证可行的路径是：**将技术图绘制成 SVG 矢量图源码（纯文本），通过 GitHub 文件接口直接创建 `.svg` 文件，再更新 Markdown 插入相对路径引用。** 这样绕过了 ChatGPT 临时生成 PNG/JPG 的二进制提取问题，不需要 Cloudflare、服务器、本地下载或图片 Base64 上传。
 
 本仓库中的示例：
-- SVG 文件：[ASPICE V 模型](../ASPICE/images/aspice-v-model.svg)
-- 已嵌入图片的文档：[ASPICE README](../ASPICE/README.md)
+- SVG 文件：[ASPICE V 模型](../回收站/2026-10-13_001/03-工程开发方法/ASPICE/images/aspice-v-model.svg)
+- 已嵌入图片的文档：[ASPICE README](../03-工程开发方法/ASPICE/README.md)
 
 ## 操作流程
 

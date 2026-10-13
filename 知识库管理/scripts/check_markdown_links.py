@@ -10,7 +10,7 @@ import re
 import sys
 from urllib.parse import unquote, urlparse
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 LINK = re.compile(r'(?<!!)\[[^\]]*\]\((<[^>]+>|[^)]+)\)')
 
 def clean_target(raw: str) -> str:

@@ -8,7 +8,7 @@
 3. 更新目标 Markdown，插入相对路径，例如 `![系统架构图](images/system-architecture.svg)`。
 4. 读回 SVG 和 Markdown，确认文件与引用都存在。
 
-示例：[ASPICE V 模型 SVG](../ASPICE/images/aspice-v-model.svg)，已嵌入 [ASPICE 文档](../ASPICE/README.md)。
+示例：[ASPICE V 模型 SVG](../回收站/2026-10-13_001/03-工程开发方法/ASPICE/images/aspice-v-model.svg)，已嵌入 [ASPICE 文档](../03-工程开发方法/ASPICE/README.md)。
 
 这条路径不需要 Cloudflare、服务器、下载 PNG 或传输图片二进制。SVG 是可由 GitHub 文件接口直接保存的文本，适合结构化技术图。需要注意：保存成功和 Markdown 引用正确已可通过文件接口核验；实际页面渲染仍应打开 GitHub 文档检查。
 
@@ -16,7 +16,7 @@
 
 PNG/JPG/WebP/GIF 是二进制文件。若 ChatGPT 生成图没有可读取的真实文件字节，不能仅凭对话中的预览自动上传；不要把图片 URL、描述或伪造 Base64 当成图片本身。
 
-需要上传本地位图时，可使用已有脚本 `scripts/push_technical_image.py`：
+需要上传本地位图时，可使用已有脚本 `知识库管理/scripts/push_technical_image.py`：
 
 1. 在 GitHub 为 `xp598008AI/knowledgebase` 创建 Fine-grained Token，仅授予 `Contents: Read and write`。
 2. 在 PowerShell 当前窗口设置环境变量：
@@ -28,7 +28,7 @@ $env:GH_TOKEN = "粘贴你自己的 token"
 3. 在仓库目录执行示例命令：
 
 ```powershell
-python scripts/push_technical_image.py "C:\\path\\to\\evcc-architecture.png" --title "EVCC 系统架构图" --document "04-充电系统与产品/EVCC/README.md" --source "ChatGPT generated concept illustration" --status Draft
+python 知识库管理/scripts/push_technical_image.py "C:\\path\\to\\evcc-architecture.png" --title "EVCC 系统架构图" --document "04-充电系统与产品/EVCC/README.md" --source "ChatGPT generated concept illustration" --status Draft
 ```
 
 脚本会检查目标 Markdown，并把图片与 JSON 元数据写入待归档队列。之后由 GitHub Actions 自动归档、插入 Markdown、更新资产索引并检查引用。只有工作流成功结束后，才能报告“已自动归档”。

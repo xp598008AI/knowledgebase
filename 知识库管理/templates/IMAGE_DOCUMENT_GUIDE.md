@@ -104,7 +104,7 @@
 - 检查 images 目录下未被 Markdown 引用的图片，提示可能遗漏。
 - 若发现真实断链，工作流失败，修复后再合并。
 
-相关脚本：`scripts/check_image_refs.py`（图片引用检查并调用链接检查）、`scripts/check_markdown_links.py`（本地 Markdown 链接检查）。
+相关脚本：`知识库管理/scripts/check_image_refs.py`（图片引用检查并调用链接检查）、`知识库管理/scripts/check_markdown_links.py`（本地 Markdown 链接检查）。
 
 自动检查只验证文件和引用关系，不会判断 AI 图片中的技术内容是否正确，也不会自动把 ChatGPT 对话中生成的图片传输到 GitHub。图片二进制数据仍需通过支持文件上传的入口或本地自动化脚本送入仓库。
 
@@ -121,7 +121,7 @@
 在已克隆的本地仓库中运行：
 
 ```bash
-python scripts/import_knowledge_image.py "/path/to/aspice-mindmap.png" "03-工程开发方法/ASPICE/README.md" --title "ASPICE 全流程思维导图"
+python 知识库管理/scripts/import_knowledge_image.py "/path/to/aspice-mindmap.png" "03-工程开发方法/ASPICE/README.md" --title "ASPICE 全流程思维导图"
 ```
 
 如需同时在本地创建 Git 提交，可追加 `--commit`，检查后再推送。

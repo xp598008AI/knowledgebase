@@ -32,4 +32,4 @@
 ## 5. 判定原则
 测试通过必须对应事先定义的预期结果与通过标准。若测试被阻塞、环境无效或证据不足，应使用 Blocked/Not Run 等状态，而不是标记 Pass。
 
-模板：../templates/TEST_REPORT.md
+模板：../知识库管理/templates/TEST_REPORT.md

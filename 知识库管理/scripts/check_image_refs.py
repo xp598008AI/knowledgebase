@@ -5,7 +5,7 @@ import re
 import sys
 from urllib.parse import unquote
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 IMAGE_LINK = re.compile(r"!\[[^\]]*\]\(([^)]+)\)")
 HTML_IMG = re.compile(r'<img\b[^>]*\bsrc=["\']([^"\']+)["\']', re.IGNORECASE)
 SUPPORTED = {".png", ".jpg", ".jpeg", ".webp", ".gif", ".svg"}

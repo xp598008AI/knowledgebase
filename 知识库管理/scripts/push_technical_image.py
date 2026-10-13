@@ -6,7 +6,7 @@ permission for xp598008AI/knowledgebase. Set GH_TOKEN or GITHUB_TOKEN in the
 environment; never put a token in a command-line argument or source file.
 
 Example:
-  python scripts/push_technical_image.py ./evcc.svg \
+  python 知识库管理/scripts/push_technical_image.py ./evcc.svg \
     --title "EVCC 系统架构图" \
     --document "04-充电系统与产品/EVCC/README.md" \
     --source "ChatGPT generated concept illustration" --status Draft

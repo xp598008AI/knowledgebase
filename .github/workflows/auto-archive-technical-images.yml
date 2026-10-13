@@ -6,7 +6,7 @@ on:
     paths:
       - '06-创新、扩展与职业竞争/技术图片资产库/待归档/**'
       - '.github/workflows/auto-archive-technical-images.yml'
-      - 'scripts/auto_archive_technical_images.py'
+      - '知识库管理/scripts/auto_archive_technical_images.py'
   workflow_dispatch:
 
 permissions:
@@ -30,13 +30,13 @@ jobs:
         with:
           python-version: '3.x'
       - name: Compile-check image upload bridge
-        run: python -c "import ast,pathlib; files=list(map(pathlib.Path, ('scripts/push_technical_image.py', 'scripts/auto_archive_technical_images.py', 'scripts/check_image_refs.py', 'scripts/check_markdown_links.py'))); [ast.parse(p.read_text(encoding='utf-8'), filename=str(p)) for p in files]; print('Syntax OK:', len(files), 'Python scripts')"
+        run: python -c "import ast,pathlib; files=list(map(pathlib.Path, ('知识库管理/scripts/push_technical_image.py', '知识库管理/scripts/auto_archive_technical_images.py', '知识库管理/scripts/check_image_refs.py', '知识库管理/scripts/check_markdown_links.py'))); [ast.parse(p.read_text(encoding='utf-8'), filename=str(p)) for p in files]; print('Syntax OK:', len(files), 'Python scripts')"
       - name: Validate staged images
-        run: python scripts/auto_archive_technical_images.py
+        run: python 知识库管理/scripts/auto_archive_technical_images.py
       - name: Archive images and update Markdown
-        run: python scripts/auto_archive_technical_images.py --apply
+        run: python 知识库管理/scripts/auto_archive_technical_images.py --apply
       - name: Validate archived images and Markdown links
-        run: python scripts/check_image_refs.py
+        run: python 知识库管理/scripts/check_image_refs.py
       - name: Commit archive results
         run: |
           if git diff --quiet; then

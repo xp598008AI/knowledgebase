@@ -22,4 +22,4 @@ jobs:
         with:
           python-version: "3.x"
       - name: Validate image references
-        run: python scripts/check_image_refs.py
+        run: python 知识库管理/scripts/check_image_refs.py

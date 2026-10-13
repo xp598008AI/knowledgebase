@@ -15,7 +15,7 @@ import shutil
 import sys
 from pathlib import Path, PurePosixPath
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 QUEUE = ROOT / "06-创新、扩展与职业竞争" / "技术图片资产库" / "待归档"
 ASSET_INDEX = ROOT / "06-创新、扩展与职业竞争" / "技术图片资产库" / "README.md"
 SUPPORTED = {".png", ".jpg", ".jpeg", ".webp", ".gif", ".svg"}

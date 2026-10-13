@@ -2,7 +2,7 @@
 """Import an image into the knowledge base and embed it in a Markdown document.
 
 Run from a local clone of the repository:
-  python scripts/import_knowledge_image.py /path/to/image.png 04-process/ASPICE.md --title "ASPICE process mind map"
+  python 知识库管理/scripts/import_knowledge_image.py /path/to/image.png 04-process/ASPICE.md --title "ASPICE process mind map"
 Add --commit to create a local git commit after staging the image and Markdown file.
 """
 from __future__ import annotations
@@ -13,7 +13,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 SUPPORTED = {".png", ".jpg", ".jpeg", ".webp", ".gif", ".svg"}
 
 def slugify(value: str) -> str:
