@@ -42,3 +42,7 @@
 `python scripts/import_knowledge_image.py <图片文件> <目标Markdown相对路径> --title "图片标题"`
 
 脚本会将图片复制到目标文档旁的 `images/` 目录，并插入 Markdown 图片引用和审核提示。仓库中的 GitHub Actions 可检查本地图片引用和 Markdown 文件链接，但需以实际 Actions 运行记录为准；请勿将未经核实的 AI 生成图作为标准要求或实测证据。
+
+## 回收站
+
+- [知识库回收站](回收站/README.md)：删除资料默认先移入回收站，保留原目录结构；恢复及永久删除规则见说明。

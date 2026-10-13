@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1100" viewBox="0 0 1600 1100" role="img" aria-labelledby="title desc">
+<title id="title">Automotive SPICE 端到端开发与验证全局总览</title>
+<desc id="desc">按正确层级展示 SYS.1 需求获取入口，以及 SYS.2-SYS.5、SYS.3-SYS.4、SWE.1-SWE.6、SWE.2-SWE.5、SWE.3-SWE.4 的开发验证对应关系，并展示管理、支持、追溯和门禁。</desc>
+<defs>
+  <filter id="shadow"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity=".12"/></filter>
+  <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#64748b"/></marker>
+  <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#2563eb"/></marker>
+  <marker id="arrowGreen" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#16a34a"/></marker>
+  <style>
+    text{font-family:"Microsoft YaHei","Noto Sans CJK SC",Arial,sans-serif;fill:#172033}
+    .title{font-size:34px;font-weight:700}.sub{font-size:16px;fill:#64748b}.section{font-size:20px;font-weight:700}
+    .id{font-size:16px;font-weight:700}.name{font-size:17px;font-weight:700}.small{font-size:13px;fill:#475569}
+    .pair{font-size:14px;font-weight:700;fill:#475569}.bar{font-size:15px;font-weight:700}.note{font-size:13px;fill:#64748b}
+  </style>
+</defs>
+
+<rect width="1600" height="1100" rx="26" fill="#f8fafc"/>
+<text x="60" y="58" class="title">Automotive SPICE：端到端开发与验证全局总览</text>
+<text x="60" y="90" class="sub">核心逻辑：需求获取 → 分层分析与设计 → 实现 → 分层验证；每一层按同层目标建立验证对应关系</text>
+
+<!-- legend -->
+<g transform="translate(1060 38)">
+  <rect width="470" height="64" rx="14" fill="#fff" stroke="#dbe4ef"/>
+  <circle cx="24" cy="22" r="7" fill="#2563eb"/><text x="40" y="27" class="small">需求 / 设计</text>
+  <circle cx="150" cy="22" r="7" fill="#7c3aed"/><text x="166" y="27" class="small">实现</text>
+  <circle cx="258" cy="22" r="7" fill="#16a34a"/><text x="274" y="27" class="small">验证</text>
+  <circle cx="358" cy="22" r="7" fill="#f59e0b"/><text x="374" y="27" class="small">门禁</text>
+  <circle cx="24" cy="46" r="7" fill="#dc2626"/><text x="40" y="51" class="small">缺陷 / 变更</text>
+  <circle cx="150" cy="46" r="7" fill="#64748b"/><text x="166" y="51" class="small">MAN / SUP</text>
+</g>
+
+<!-- main canvas -->
+<rect x="45" y="125" width="1510" height="755" rx="22" fill="#fff" stroke="#dbe4ef"/>
+
+<!-- entry -->
+<g filter="url(#shadow)">
+  <rect x="610" y="150" width="380" height="78" rx="15" fill="#eff6ff" stroke="#93c5fd"/>
+</g>
+<text x="800" y="176" text-anchor="middle" class="id">SYS.1</text>
+<text x="800" y="201" text-anchor="middle" class="name">需求获取 / Requirements Elicitation</text>
+<text x="800" y="219" text-anchor="middle" class="small">客户 / 利益相关方需求、约束、边界、验收期望</text>
+<path d="M800 228 L800 252" stroke="#2563eb" stroke-width="3" marker-end="url(#arrowBlue)"/>
+
+<!-- headers -->
+<text x="110" y="270" class="section" fill="#2563eb">开发侧：逐层分解与设计</text>
+<text x="1160" y="270" class="section" fill="#16a34a">验证侧：逐层集成与验证</text>
+<text x="800" y="270" text-anchor="middle" class="section" fill="#64748b">正确的一一对应关系</text>
+
+<!-- V rails -->
+<path d="M255 330 L355 445 L455 560 L555 675 L660 790" fill="none" stroke="#2563eb" stroke-width="6" stroke-linecap="round"/>
+<path d="M940 790 L1045 675 L1145 560 L1245 445 L1345 330" fill="none" stroke="#16a34a" stroke-width="6" stroke-linecap="round"/>
+<path d="M660 790 L940 790" fill="none" stroke="#7c3aed" stroke-width="6" stroke-linecap="round"/>
+
+<!-- LEFT boxes -->
+<g filter="url(#shadow)">
+  <rect x="80" y="295" width="350" height="86" rx="14" fill="#eff6ff" stroke="#93c5fd"/>
+  <rect x="180" y="410" width="350" height="86" rx="14" fill="#eff6ff" stroke="#93c5fd"/>
+  <rect x="280" y="525" width="350" height="86" rx="14" fill="#eff6ff" stroke="#93c5fd"/>
+  <rect x="380" y="640" width="350" height="86" rx="14" fill="#eff6ff" stroke="#93c5fd"/>
+  <rect x="485" y="755" width="350" height="86" rx="14" fill="#f5f3ff" stroke="#c4b5fd"/>
+</g>
+
+<!-- RIGHT boxes -->
+<g filter="url(#shadow)">
+  <rect x="765" y="755" width="350" height="86" rx="14" fill="#f0fdf4" stroke="#86efac"/>
+  <rect x="870" y="640" width="350" height="86" rx="14" fill="#f0fdf4" stroke="#86efac"/>
+  <rect x="970" y="525" width="350" height="86" rx="14" fill="#f0fdf4" stroke="#86efac"/>
+  <rect x="1070" y="410" width="350" height="86" rx="14" fill="#f0fdf4" stroke="#86efac"/>
+  <rect x="1170" y="295" width="350" height="86" rx="14" fill="#f0fdf4" stroke="#86efac"/>
+</g>
+
+<!-- left text -->
+<g text-anchor="middle">
+  <text x="255" y="322" class="id">SYS.2</text><text x="255" y="347" class="name">系统需求分析</text><text x="255" y="368" class="small">形成可验证的系统需求与属性</text>
+  <text x="355" y="437" class="id">SYS.3</text><text x="355" y="462" class="name">系统架构设计</text><text x="355" y="483" class="small">系统元素、接口、分配、约束</text>
+  <text x="455" y="552" class="id">SWE.1</text><text x="455" y="577" class="name">软件需求分析</text><text x="455" y="598" class="small">从系统分配形成软件需求</text>
+  <text x="555" y="667" class="id">SWE.2</text><text x="555" y="692" class="name">软件架构设计</text><text x="555" y="713" class="small">组件、接口、行为、资源约束</text>
+  <text x="660" y="782" class="id">SWE.3</text><text x="660" y="807" class="name">详细设计与单元构建</text><text x="660" y="828" class="small">详细设计、代码、配置与构建</text>
+</g>
+
+<!-- right text -->
+<g text-anchor="middle">
+  <text x="940" y="782" class="id">SWE.4</text><text x="940" y="807" class="name">软件单元验证</text><text x="940" y="828" class="small">单元级功能、边界、异常与覆盖</text>
+  <text x="1045" y="667" class="id">SWE.5</text><text x="1045" y="692" class="name">软件集成与集成验证</text><text x="1045" y="713" class="small">组件接口、交互、时序与集成行为</text>
+  <text x="1145" y="552" class="id">SWE.6</text><text x="1145" y="577" class="name">软件验证</text><text x="1145" y="598" class="small">验证软件满足软件需求</text>
+  <text x="1245" y="437" class="id">SYS.4</text><text x="1245" y="462" class="name">系统集成与集成验证</text><text x="1245" y="483" class="small">系统元素接口与集成行为验证</text>
+  <text x="1345" y="322" class="id">SYS.5</text><text x="1345" y="347" class="name">系统验证</text><text x="1345" y="368" class="small">验证系统满足系统需求</text>
+</g>
+
+<!-- exact pairings -->
+<g fill="none" stroke="#94a3b8" stroke-width="2.2" stroke-dasharray="8 6" marker-end="url(#arrow)">
+  <path d="M430 338 L1170 338"/>
+  <path d="M530 453 L1070 453"/>
+  <path d="M630 568 L970 568"/>
+  <path d="M730 683 L870 683"/>
+  <path d="M835 798 L765 798"/>
+</g>
+<g text-anchor="middle">
+  <rect x="690" y="320" width="220" height="28" rx="8" fill="#f8fafc"/><text x="800" y="340" class="pair">SYS.2 ↔ SYS.5</text>
+  <rect x="690" y="435" width="220" height="28" rx="8" fill="#f8fafc"/><text x="800" y="455" class="pair">SYS.3 ↔ SYS.4</text>
+  <rect x="690" y="550" width="220" height="28" rx="8" fill="#f8fafc"/><text x="800" y="570" class="pair">SWE.1 ↔ SWE.6</text>
+  <rect x="690" y="665" width="220" height="28" rx="8" fill="#f8fafc"/><text x="800" y="685" class="pair">SWE.2 ↔ SWE.5</text>
+  <rect x="690" y="780" width="220" height="28" rx="8" fill="#f8fafc"/><text x="800" y="800" class="pair">SWE.3 ↔ SWE.4</text>
+</g>
+
+<!-- clarification -->
+<rect x="520" y="286" width="560" height="36" rx="10" fill="#fff7ed" stroke="#fdba74"/>
+<text x="800" y="309" text-anchor="middle" class="small" fill="#9a3412">SYS.1 是需求获取入口，不强行与右侧某一验证过程做一一横向配对</text>
+
+<!-- gate -->
+<rect x="70" y="895" width="1460" height="46" rx="12" fill="#fffbeb" stroke="#fcd34d"/>
+<text x="800" y="924" text-anchor="middle" class="bar">🟠 关键门禁：需求/架构评审通过 ｜ 测试准入满足 ｜ 失败项闭环 ｜ 变更影响分析完成 ｜ 发布基线一致</text>
+
+<!-- traceability -->
+<rect x="70" y="955" width="1460" height="58" rx="14" fill="#eff6ff" stroke="#bfdbfe"/>
+<text x="800" y="979" text-anchor="middle" class="bar">🔵 核心证据链：需求 ↔ 架构 ↔ 详细设计/代码 ↔ 测试用例 ↔ 测试结果 ↔ 缺陷/变更 ↔ 配置基线</text>
+<text x="800" y="1001" text-anchor="middle" class="small">横向对应用于说明“该层工作产品由哪一层验证活动确认”，不代表流程只能按一次性瀑布顺序执行</text>
+
+<!-- support -->
+<rect x="70" y="1025" width="710" height="52" rx="13" fill="#f1f5f9" stroke="#cbd5e1"/>
+<text x="92" y="1048" class="bar">MAN 管理过程</text><text x="92" y="1068" class="small">计划 · 监控 · 风险 · 资源 · 决策 · 里程碑</text>
+<rect x="820" y="1025" width="710" height="52" rx="13" fill="#f1f5f9" stroke="#cbd5e1"/>
+<text x="842" y="1048" class="bar">SUP 支持过程</text><text x="842" y="1068" class="small">质量保证 · 配置管理 · 问题解决 · 变更控制 · 评审 · 追溯</text>
+
+<text x="70" y="1092" class="note">说明：工程理解示意图，不是 PAM 官方流程图。过程名称、编号、适用范围和工作产品应按项目实际采用的 Automotive SPICE 版本与裁剪结果核对。</text>
+</svg>
