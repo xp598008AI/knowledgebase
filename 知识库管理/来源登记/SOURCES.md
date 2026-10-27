@@ -31,3 +31,17 @@
 | PE-S02 | Boost功率级计算 | TI SLVA372 Rev. D，核验2026-10-14 | 同上，升压功率级参考 | Draft |
 | PE-S03 | 图腾柱PFC | TI TIDM-02008在线页，核验2026-10-14；未锁定设计修订 | 同上，结构与控制入口 | Draft |
 | PE-S04 | 双向DAB | TI TIDA-010054在线页，核验2026-10-14；未锁定设计修订 | 同上，双向隔离入口 | Draft |
+
+## V2G/V2H 工程专题参考来源
+
+仅记录公开链接和原创总结，未导入或再分发标准正文；来源和工程解释均为 Draft，核验日期 2026-10-27。
+
+| ID | 资料 | 版本/日期及用途 | 原文许可和保存方式 | 审核状态 |
+|---|---|---|---|---|
+| V2X-S01 | [ISO 15118-20](https://www.iso.org/standard/77845.html) | 2022，双向传输通信范围；详细条款待核验 | 仅链接，原文版权归 ISO | Draft |
+| V2X-S02 | [ISO 15118-20 Amd 1](https://www.iso.org/standard/87920.html) | 2026-07，AC DER、MCS 和安全修订信息 | 仅链接，原文版权归 ISO | Draft |
+| V2X-S03 | [美国能源部双向充电](https://www.energy.gov/cmei/femp/bidirectional-charging-and-electric-vehicles-mobile-storage) | 在线资料，备电和建筑能源应用 | 仅链接，原站许可适用 | Draft |
+| V2X-S04 | [CharIN 知识库](https://www.charin.global/technology/knowledge-base/) | DC BPT 动态互操作指南入口 | 仅链接，原站许可适用 | Draft |
+| V2X-S05 | [Open Charge Alliance OCPP](https://openchargealliance.org/protocols/open-charge-point-protocol/) | OCPP 2.1 双向功能说明 | 仅链接，原站许可适用 | Draft |
+
+关联：[V2G/V2H 工程专题](../../04-充电系统与产品/充电系统/V2G与V2H收益、系统方案及EVCC职责.md)。
